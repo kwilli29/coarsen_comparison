@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <sys/time.h>
+#include "igraph/igraph.h"
 
 struct Graph{
     int active_index; // number of unique edges
@@ -15,7 +16,69 @@ struct Graph{
     // submeta if ever relevant
 };
 
+struct NodeEdgePair{
+    int N;
+    int active_index;
+};
+
 void quickSort(int [], int, int, int [], float []);
+
+igraph_t ncol_graph(char input_file[], int N) {
+   
+    igraph_t g;
+
+    FILE *ifile = fopen(input_file, "r"); //fmemopen((void*) data, size, "r");
+    if (!ifile) {
+        return g;
+    }
+
+    igraph_vector_t weights;
+    igraph_vector_init(&weights, 0);
+
+    igraph_vector_int_t el;
+    igraph_vector_int_init(&el, 0);
+
+    igraph_es_t eids;
+    igraph_es_all(&eids, IGRAPH_EDGEORDER_ID);
+
+    igraph_integer_t i, j, n;
+
+    if (igraph_read_graph_ncol(&g, ifile, NULL, 1, IGRAPH_ADD_WEIGHTS_YES, IGRAPH_UNDIRECTED) == IGRAPH_SUCCESS) {
+        printf("Graph creation success\n");
+        printf("%" IGRAPH_PRId "\n", igraph_vcount(&g));
+        printf("%" IGRAPH_PRId "\n", igraph_ecount(&g));
+    }
+
+    assert(igraph_vector_int_size(&g.os) == igraph_vcount(&g)+1);
+    assert(igraph_vector_int_size(&g.is) == igraph_vcount(&g)+1);
+   
+    igraph_get_edgelist(&g, &el, 0);
+    igraph_edges(&g, eids, &el);
+
+    const char* w = "weight";
+    printf("attr exists: %d\n", igraph_cattribute_has_attr(&g, IGRAPH_ATTRIBUTE_EDGE, w));
+
+    igraph_cattribute_EANV(&g, w, eids, &weights);
+
+    n = igraph_ecount(&g);
+    //for (i = 0, j = 0; i < n; i++, j += 2) {
+    //    printf("%" IGRAPH_PRId " -- %" IGRAPH_PRId ": %g\n",VECTOR(el)[j], VECTOR(el)[j + 1], VECTOR(weights)[i]);
+    //}
+
+    printf("N: %d ecount: %" IGRAPH_PRId "\n", N, igraph_ecount(&g));
+    
+    // Clean up
+
+    igraph_vector_int_destroy(&el);
+    igraph_vector_destroy(&weights);
+    igraph_es_destroy(&eids);
+    //igraph_destroy(&g);
+
+    fclose(ifile);
+
+    return g;
+}
+
 
 struct Graph* csv_to_graph_small(char input_file[], int N, bool sym){
     
@@ -82,7 +145,7 @@ struct Graph* csv_to_graph_small(char input_file[], int N, bool sym){
     ret_graph.N = N;
     ret_graph.active_index = index;
     ret_graph.row_ptr = (int*)calloc(index,sizeof(int));
-    //ret_graph.row_ptr = (int*)calloc(N,sizeof(int));
+    //ret_graph.row_inds = (int*)calloc(N,sizeof(int));
     ret_graph.col_ptr = (int*)calloc(index,sizeof(int));
     ret_graph.value_ptr = (float*)calloc(index,sizeof(float)); // floats
 
@@ -94,6 +157,22 @@ struct Graph* csv_to_graph_small(char input_file[], int N, bool sym){
     }
 
     quickSort(ret_graph.row_ptr, 0, index-1, ret_graph.col_ptr, ret_graph.value_ptr);
+
+    // assumes every node has at least itself as a neighbor????
+
+    /*ret_graph.row_inds[0] = ret_graph.row_ptr[0]; // ?? = 0;?
+    int n_ind = 0;
+    for(int i = 0; i < index; i++){
+        if(ret_graph.row_ptr[i] != n_ind){ // ret_graph.row_inds[n_ind]
+            n_ind++;
+            ret_graph.row_inds[n_ind] = i;
+        }
+    }
+
+    printf("rowind size: %d, N: %d\nRow Inds: ", n_ind+1, N);
+    for(int i =0; i < n_ind; i++){
+        printf("%d ", ret_graph.row_inds[i]);
+    }printf("\n"); */
 
 	fclose(stream);
 
@@ -166,7 +245,7 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
     ret_graph.N = N;
     ret_graph.active_index = index;
     ret_graph.row_ptr  = (int*)calloc(index,sizeof(int));
-    //ret_graph.row_ptr = (int*)calloc(N,sizeof(int));
+    //ret_graph.row_inds = (int*)calloc(N,sizeof(int));
     ret_graph.col_ptr = (int*)calloc(index,sizeof(int));
     ret_graph.value_ptr = (float*)calloc(index,sizeof(float)); // floats
 
@@ -177,28 +256,40 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
 
     quickSort(ret_graph.row_ptr, 0, index-1, ret_graph.col_ptr, ret_graph.value_ptr);
 
-    /*int vert_track = row_verts[0];  // 0 0 0 1 1 1 = 0, 3, 6 ...
-    int in = 0;
-    ret_graph.row_ptr[0] = in;
-    in++;
+    // assumes every node has at least itself as a neighbor???? // 0 0 0 1 1 2 2 2 2
+                                                                // 0 3 5
+    
+    /*ret_graph.row_inds[0] = ret_graph.row_ptr[0]; // ?? = 0;?
+    int n_ind = 0;
     for(int i = 0; i < index; i++){
-        if (vert_track != row_verts[i]){
-            ret_graph.row_ptr[in] = i;
-            in++;
-            vert_track = row_verts[i];
+        if(ret_graph.row_ptr[i] != n_ind){ // ret_graph.row_inds[n_ind]
+            n_ind++;
+            ret_graph.row_inds[n_ind] = i;
+            if ((ret_graph.row_inds[n_ind] - ret_graph.row_inds[n_ind-1]) == 1){
+                printf("!! %d %d !!\n",n_ind, n_ind-1);
+            }
         }
-    }
-    */
+    }*/
+/*
+    printf("rowind size: %d, N: %d\nRow Inds: ", n_ind+1, N);
+    for(int i =0; i < n_ind; i++){
+        printf("%d ", ret_graph.row_inds[i]);
+    }printf("\n");
+
+    printf("\nGraph info:\n");
+    printf("N: %d\n# Edges: %d\n", ret_graph.N, ret_graph.active_index);
+    printf("Rows: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%d ", ret_graph.row_ptr[i]);} printf("\n");
+    printf("Cols: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%d ", ret_graph.col_ptr[i]);} printf("\n");
+    printf("Vals: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%lf ", ret_graph.value_ptr[i]);} printf("\n"); */
 
     free(max_row);
     free(max_col);
     free(max_value);
 
-	 fclose(stream);
+	fclose(stream);
 
     return (&ret_graph);
 }
-
 
 /********************************************************************/
 // implement Quick Sort Algorithm
@@ -310,14 +401,48 @@ int binary_search(struct Graph* G, int NUM_EDGE, int v){ // https://stackoverflo
 
 
 /********************************************************************/
+/* int neigh_sz2(struct Graph* G, int v){
+    int neighbor_size = 0;
 
-/* 
+    // 0 3 
+    // n0 n0 n0 n1 n1 ....
+
+    if (v >= (G->N-1)){
+        neighbor_size = G->active_index - G->row_inds[v]; //
+        
+    } else {
+        neighbor_size = G->row_inds[v+1] - G->row_inds[v];
+    }
+
+    int neighbors[neighbor_size];
+    memset(neighbors, 0, neighbor_size*sizeof(int));
+
+    for(int j=G->row_inds[v]; j<(neighbor_size+G->row_inds[v]);j++){
+        //printf("%d ", G->col_ptr[j]);
+        neighbors[j-G->row_inds[v]] = G->col_ptr[j];
+    }
+
+    printf("Neighbors of %d: ", v);
+    for(int j = 0; j < neighbor_size; j++){
+        printf("%d ", neighbors[j]);
+    }printf("\n");
+
+    return neighbor_size;
+}
+
 int main(){
 
-    char file[1024] = "csv/west0067.csv";
-    int N = 67;
-    struct Graph* grptr = csv_to_graph(file, N);
+    char file[1024] = "csv/bcsstk17.csv";
+    int N = 10974;
+    struct Graph* grptr = csv_to_graph_large(file, N, false);
+
+    int n1 =  neigh_sz2(grptr, 0);
+    int n2 =  neigh_sz2(grptr, 5487);
+    int n3 =  neigh_sz2(grptr, 10973);
+    printf("\n");
+    for(int j=grptr->row_inds[10973]; j<(n3+grptr->row_inds[10973]-1);j++){
+        printf("%d ", grptr->col_ptr[j]);
+    }printf("\n");
 
     return 0;
-}
-*/
+}*/

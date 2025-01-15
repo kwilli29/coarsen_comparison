@@ -562,7 +562,7 @@ struct Graph* kokkos_coarsen(struct Graph* G, int N){ // 2. Kokkos Coarsen
     int M1_length=0;                            // get the length of the MIS = # of starting supernodes
     while(M1[M1_length] != -1){ M1_length+=1;}
 
-    printf("M1 Length: %d,\n", M1_length);
+    printf("M1 Length: %d\n", M1_length);
 
     // print out MIS
     //printf("M1: "); for(int i=0;i<M1_length;i++){ printf("%d ", M1[i]); } printf("\n");
@@ -634,6 +634,8 @@ struct Graph* kokkos_coarsen(struct Graph* G, int N){ // 2. Kokkos Coarsen
     }
 	
 
+    printf("SPN: %d\n\n", supernode);
+
     // 7. Build the subgraph edge relationships based on the original graph
     struct Graph* subgraph;
     if (N >= 16000){
@@ -655,7 +657,12 @@ void display_graph_info(struct Graph* G){
     printf("Vals: ");for(int i=0; i < G->active_index;i++){ printf("%lf ", G->value_ptr[i]);} printf("\n");
     return;
 }
-
+void display_ratios(struct Graph* G){
+    printf("\n!: %d,", G->N);
+    printf("%d,", G->active_index);
+    printf("%d\n\n", ITERATIONS);
+    return;
+}
 int cleanup(struct Graph* G){
 	printf("NCLEANUP: %d\n", G->N);
     free(G->row_ptr);
@@ -671,6 +678,8 @@ int recursion_fcn(struct Graph* G, int goal_verts){ // 1. Base Case/Recursive St
     // get graph size
     int graph_size = G->N;
 
+    printf("\nI: %d, %d, %d\n\n", ITERATIONS, graph_size, goal_verts);
+
     // Base Case 
     if (graph_size <= goal_verts){
         cleanup(G); // no cleanup? -- sigabrts if you try to clean up this last graph
@@ -681,11 +690,12 @@ int recursion_fcn(struct Graph* G, int goal_verts){ // 1. Base Case/Recursive St
     struct Graph* subgraph = kokkos_coarsen(G, graph_size); // pass in pointer to G AND G's size
 
     // print subgraph & number of vertices coarsened
-    display_graph_info(subgraph);
-    printf("Vertices coarsened: %d - %d = %d\n", graph_size, (graph_size - subgraph->N), subgraph->N);
-
-
+    //display_graph_info(subgraph);
+    //printf("Vertices coarsened: %d - %d = %d\n", graph_size, (graph_size - subgraph->N), subgraph->N);
+    
     ITERATIONS+=1;
+
+    display_ratios(subgraph);
 
     return recursion_fcn(subgraph, goal_verts);
 }
@@ -699,34 +709,32 @@ int main(){
     int MAXNAME = 1024; // max length of a file name
 
     int N = 85;         // number of vertices in data graph
-    bool g_sym = false; // is the data symmetric
+    //bool g_sym = false; // is the data symmetric
 
     // load G in from a csv file
     char filename[MAXNAME];
     memset(filename, '\0', MAXNAME*sizeof(char) );
     strcpy(filename, "csv/ash85.csv");              // csv file to read from
-    // "csv/simple_graph_000.csv"  //True,  # N=5
-    // "csv/kk_simpleEx.csv",      //True,  # N=6
-    // "csv/simple_graph_001.csv", //True,  # N=7
-    // "csv/ash85.csv",         //False, # N=85
-    // "csv/netz4504.csv" //False, # N=1961
-    // "csv/gemat11.csv" // False, #N=4929
-    // "csv/bcspwr10.csv" // False, # N=5300
+    // "csv/ash85.csv",   // False, #N=85
+    // "csv/netz4504.csv" // False, #N=1961
+    // "csv/gemat11.csv"  // False, #N=4929
+    // "csv/bcspwr10.csv" // False, #N=5300
     // "csv/bcsstk17.csv" // False, #N=10974
-    // "csv/shock-9.csv" // False, #N=36476
+    // "csv/shock-9.csv"  // False, #N=36476
+    // "csv/ecology1.csv" // False, #N=1000000
 
 
     struct Graph* graph_ptr; // G = ptr to graph struct w/ csr data
     if (N < 100){
-        graph_ptr = csv_to_graph_small(filename, N, g_sym); // smaller graph
+        graph_ptr = csv_to_graph_small(filename, N, false); // smaller graph
     } else {
-        graph_ptr = csv_to_graph_large(filename, N, g_sym); // bigger graph
+        graph_ptr = csv_to_graph_large(filename, N, false); // bigger graph
     }
 
-
+    display_ratios(graph_ptr);
     //display_graph_info(graph_ptr); // Optional: Display initial graph
 
-    int goal_verts = (int)(N/2) - 1;        // set minimum goal vertices
+    int goal_verts = (int)(N/6) - 1;        // set minimum goal vertices
     printf("goal_verts: %d\n", goal_verts);
 
     clock_t start = clock();
@@ -736,9 +744,10 @@ int main(){
     clock_t end = clock();
 
     double myTime = (((double)end - start)/CLOCKS_PER_SEC);
-    printf("# of Iterations: %d\n", ITERATIONS);
-    printf("Exit %d \n", exit1);
-    printf("Coarsened in %f seconds.\n", myTime); //
+    //printf("# of Iterations: %d\n", ITERATIONS);
+    //printf("Exit %d \n", exit1);
+    printf("\nT: %f\n", myTime);
+    //printf("Coarsened in %f seconds.\n", myTime); //
 
     return 0;
 }

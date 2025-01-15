@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import random as rand
 import csv
+import sys
 from collections import defaultdict
 import numpy as np
 from scipy import sparse
@@ -61,7 +62,7 @@ def read_suitesparse_rb_to_csv(filename, csv_file):
 
     # read suitespare [case: MM]
     with open(filename, 'r') as mm_file:
-        for _ in range(44): mm_file.readline()
+        for _ in range(20): mm_file.readline()
         row,col,verts = mm_file.readline().split()
         coords = mm_file.read()
 
@@ -82,15 +83,52 @@ def read_suitesparse_rb_to_csv(filename, csv_file):
         # write rows - node1, node2, weight
         for coord in coords:
             if coord:
-                #x,y,w = coord.split()
-                x,y = coord.split(' ')
+                x,y,w = coord.split()
+                #x,y = coord.split(' ')
                 # 1 based not 0 based index:
                 if x != y: # no self loops for now
                     true_vert+=1
                 x = int(x) - 1
                 y = int(y) - 1
-                #w = float(w) # FLOAT
-                w=1
+                w = float(w) # FLOAT
+                #w=1
+                writer.writerow([x,y,w])
+    
+    return row
+
+def matmart_to_ncol(filename, ncol_filename):
+        # read suitespare [case: MM]
+    with open(filename, 'r') as mm_file:
+        for _ in range(1): mm_file.readline()
+        row,col,verts = mm_file.readline().split()
+        coords = mm_file.read()
+
+    print(row,col,verts)
+
+    true_vert = 0
+
+    coords = coords.split('\n')
+
+    # write to csv
+    with open(ncol_filename, 'w') as csvfile:
+        # creating a csv dict writer object
+        writer = csv.writer(csvfile, delimiter=" ")
+
+        # writing headers (field names)
+        # writer.writerow(['node1','node2','weight'])
+
+        # write rows - node1, node2, weight
+        for coord in coords:
+            if coord:
+                x,y,w = coord.split()
+                #x,y = coord.split(' ')
+                # 1 based not 0 based index:
+                if x != y: # no self loops for now
+                    true_vert+=1
+                x = int(x) - 1
+                y = int(y) - 1
+                w = float(w) # FLOAT
+                #w=1
                 writer.writerow([x,y,w])
     
     return row
@@ -149,14 +187,97 @@ def read_csv_file(N, filename):
 
     return G
 
+def txt_2_data(filename, N):
+    
+    itercount = 0
+    edgenumcount = 0
+    missizecount = 0
+    cvertcount = 0
+    timecount=0
+    spncount=0
+
+    iter=0
+    numedge=0
+    vertnum=0
+    spn=0
+    time=0
+    M1_len = 0
+
+    prev_edge = -1
+    prev_iter = 0
+
+    edge_ratio = 0
+    edge_ratiocount = 0
+
+    maxcoarsesz = 0
+    maxedge=0
+    
+    with open(filename, 'r') as data_file:
+        for data in data_file:
+            
+            if data[0] == '!':
+                vertnum += int(data[3:].split(',')[0])
+
+                if maxedge < int(data[3:].split(',')[1]) and int(data[3:].split(',')[2])>0:
+                    maxedge = int(data[3:].split(',')[1])
+
+                if int(data[3:].split(',')[0]) == N:
+                    prev_iter = 0
+                    prev_edge = -1
+
+                if prev_edge == -1:
+                    prev_edge = int(data[3:].split(',')[1])
+                else:
+                    edge_ratio += float(int(data[3:].split(',')[1])/prev_edge)
+                    prev_edge = int(data[3:].split(',')[1]) 
+                    edge_ratiocount+=1
+
+                if int(data[3:].split(',')[2]) > prev_iter:
+                    prev_iter = int(data[3:].split(',')[2])
+                
+                cvertcount+=1
+                
+            elif data[0] == 'M':
+                M1_len += int(data[:-1].split(" ")[2])
+                missizecount+=1
+            elif data[0] == 'S':
+                if maxcoarsesz < int(data.split(" ")[1]):
+                    maxcoarsesz = int(data.split(" ")[1])
+                spn += int(data.split(" ")[1])
+                spncount+=1
+
+            elif data[0] == 'T':
+                iter+=prev_iter
+                itercount+=1
+                prev_iter = 0
+
+                time += float(data.split(" ")[1])
+                timecount+=1
+        
+    print(f"Avg MIS Sz: {M1_len/missizecount}")
+    print(f"Avg Coarsen Sz: {spn/spncount}")
+    print(f"Max. Coarsen Sz: {maxcoarsesz}")
+    #print(f"Avg Edge Ratio: {edge_ratio/edge_ratiocount}")
+    print(f"Max Edge #: {maxedge}")
+    print(f"Avg Iter #: {iter/itercount}")
+    print(f"Avg CPU Time: {time/timecount}")
+    
+
 def main():
 
-    filename = 'suitesparse/shock-9.mtx'
+    filename = 'suitesparse/bcsstk17.mtx'
 
-    csv_file = 'csv/shock-9.csv'
+    csv_file = 'csv/bcsstk17.csv'
 
-    N = read_suitesparse_rb_to_csv(filename, csv_file)
-    print(N)
+    ncol_file = 'csv/bcsstk17.ncol'
+
+    #N = read_suitesparse_rb_to_csv(filename, csv_file)
+    #N = matmart_to_ncol(filename, ncol_file)
+    #print(N)
+
+    N=sys.argv[1] # 85
+    txt_2_data(sys.argv[2],N) # "output/cilk1_a85.txt",N)
+    print("\n")
 
     return
 

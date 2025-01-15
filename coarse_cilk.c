@@ -416,8 +416,7 @@ void thirdPass(struct Graph* G, int unasgn, int* labels, int* supernode_ptr){ //
 /****************************************/
 
 struct Graph* build_edges_1D(struct Graph* G, int* labels, int spn){
-    //printf("Labels ");for(int k=0;k<G->N;k++){ printf("%d ", labels[k]);}printf("\n");
-    //printf("\nspn: %d\n", spn);
+    //printf("Labels ");for(int k=0;k<G->N;k++){ printf("%d ", labels[k]);}printf("\n"); //printf("\nspn: %d\n", spn);
 
     int index1 = 0; // actual number of edges
     int row_spn=-1;
