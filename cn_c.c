@@ -5,7 +5,7 @@
 #include <time.h>
 #include <math.h>
 #include <pthread.h> //pthread library
-#include "fib.c"
+#include "convert_types.c"
 #include "igraph/igraph.h"
 
 // shared memory, multithread, 
@@ -27,8 +27,6 @@ void decideInOut(int, int*, int*, igraph_t*);
 void display_graph_info(igraph_t*);
 int cleanup(igraph_t*);
 
-// set random seed
-
 int IN = 0;
 int OUT = BUFSIZ*128;
 int UNDECIDED = 2;
@@ -49,8 +47,7 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
         colStatus[i] = OUT;
     }
 
-    //printf("rowStat: ");for (int j = 0; j < numVerts; j++){printf("%d ", rowStatus[j]);}printf("\n");
-    //printf("colStat: ");for (int i = 0; i < numVerts; i++){printf("%d ", colStatus[i]);} printf("\n");
+    //printf("rowStat: ");for (int j = 0; j < numVerts; j++){printf("%d ", rowStatus[j]);}printf("\n"); //printf("colStat: ");for (int i = 0; i < numVerts; i++){printf("%d ", colStatus[i]);} printf("\n");
 
     // Initialize worklist1 & worklist2
 
@@ -63,8 +60,7 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
     int wrk1sz = (int)numVerts;
     int wrk2sz = (int)numVerts;
 
-    //for (k = 0; k < wrk1sz; k++){printf("%d ", worklist1[k]);}printf("\n");
-    //for ( k = 0; k < wrk2sz; k++){printf("%d ", worklist2[k]);} printf("\n");
+    //for (k = 0; k < wrk1sz; k++){printf("%d ", worklist1[k]);}printf("\n"); //for (k = 0; k < wrk2sz; k++){printf("%d ", worklist2[k]);} printf("\n");
 
     int iter = 0;
     int nvbits = randPriori((int)numVerts); // 3.1 Give undecided verticies random priorities
@@ -77,13 +73,13 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
             refreshRowStatus(rowStatus, worklist1[i], nvbits, (int)numVerts);
         }
         
-        cilk_sync; // sync? !!!!
+        cilk_sync; // sync
         
         cilk_for(int i = 0; i < wrk2sz; i++){
             refreshColStatus(colStatus, rowStatus, worklist2[i], (int)numVerts, G);
         } 
 
-        cilk_sync; // sync?
+        cilk_sync; // sync
 
         cilk_for(int i = 0; i < wrk1sz; i++){
             decideInOut(worklist1[i], rowStatus, colStatus, G);
@@ -100,21 +96,18 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
         for (int i = 0; i < wrk2sz; i++){
             if (colStatus[worklist2[i]] != OUT) { not_out++; }
         }
-        //// /////
-        // allocate
+        // allocate //
         int j=0; k=0;
         int* w1 = (int*)calloc((int)num_undecided,sizeof(int)); // keeps track of UNDECIDED vertices
         int* w2 = (int*)calloc((int)not_out,sizeof(int)); // keeps track of OUT vertices
 
-        for (int i = 0; i < wrk1sz; i++){ // Tradeoff of two seq. for loops running throuch w1 and w2, or 1 going through all verts, but can check row and colstat
+        for (int i = 0; i < wrk1sz; i++){
             if ( (rowStatus[worklist1[i]] != IN) && (rowStatus[worklist1[i]] != OUT) ){ w1[j] = worklist1[i]; j++; }
         }
         for (int i = 0; i < wrk2sz; i++){
             if (colStatus[worklist2[i]] != OUT) { w2[k] = worklist2[i]; k++; }
         }
-
-        //// ////
-
+        // copy memory to the newly shortened lists //
         worklist1 = (int*)realloc(worklist1, num_undecided*sizeof(int));
         worklist2 = (int*)realloc(worklist2, not_out*sizeof(int));
         memcpy(worklist1, w1, num_undecided*sizeof(int));
@@ -129,19 +122,19 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
     }
 
     //// 3.e. Get a list of indicies where rowStatus values == IN ////
-    // size
+    // size //
     int num_in = 0;
-    for (int i = 0; i < (int)numVerts; i++){ // tradeoff of two seq. for loops  or 1 going through all verts, but can check row and colstat
+    for (int i = 0; i < (int)numVerts; i++){ 
         if (rowStatus[i] == IN) { 
             num_in = num_in+1; }
     }
-    // alocate
+    // alocate // 
     int* in_vertices = (int*)calloc((num_in+1),sizeof(int));;  // over allocate, have a delimeter to find the length later
     k=0;
     for (int i = 0; i < (int)numVerts; i++){ 
         if (rowStatus[i] == IN) { in_vertices[k] = i; k++; }
     }
-    in_vertices[num_in] = -1; // add a delimeter
+    in_vertices[num_in] = -1; // add a delimeter to later know length
 
 
     int* M1 = (int*)calloc((num_in+1),sizeof(int)); 
@@ -174,9 +167,7 @@ void refreshRowStatus(int* rowStatus, int i, int nvBits, int numVerts){ // 3.a. 
 
 void refreshColStatus(int* colStatus, int* rowStatus, int i, int nv, const igraph_t* G){ // 3.b. Mark local minima
 
-    // !!!! get neighbors !!!! method
     //// Get neighbors of vertex i ////
-
     assert(igraph_vector_int_size(&G->os) == igraph_vcount(G)+1);
     assert(igraph_vector_int_size(&G->is) == igraph_vcount(G)+1);
 
@@ -223,13 +214,11 @@ void decideInOut(int i, int* rowStatus, int* colStatus, igraph_t* G){ // 3.c. Lo
     if( (s == IN) || (s==OUT) ){ return; }
 
     //// Get neighbors of vertex i ////
-    // !!!! get neighbors !!!! method
 
     igraph_vector_int_t neighbors;
     igraph_vector_int_init(&neighbors, 0);
 
     igraph_neighbors(G, &neighbors, i, IGRAPH_ALL);
-    // igraph_vector_int_sort(&neighbors);
     //igraph_vector_print(&neighbors);
 
     igraph_integer_t neighbors_size = igraph_vector_int_size(&neighbors);
@@ -252,13 +241,11 @@ void decideInOut(int i, int* rowStatus, int* colStatus, igraph_t* G){ // 3.c. Lo
             neigh_mismatchS = true;
         }
     }
-
-    //pthread_mutex_t m; //define the lock
     
 
     if (neigh_out){
         pthread_mutex_lock(&m0); // lock
-        rowStatus[i] = OUT;                 // !!!! Does this need to be locked??
+        rowStatus[i] = OUT;                 
         pthread_mutex_unlock(&m0);// unlock
     } else if ( !(neigh_mismatchS) ){
         pthread_mutex_lock(&m0);// lock
@@ -295,16 +282,13 @@ void firstPass(igraph_t* G, int supernode, int m, igraph_integer_t* labels){ // 
     labels[m] = (igraph_integer_t)supernode;
 
     //// Get neighbors of vertex i ////
-    // !!!! get neighbors !!!! method
     igraph_vector_int_t neighbors;
     igraph_vector_int_init(&neighbors, 0);
 
     igraph_neighbors(G, &neighbors, m, IGRAPH_ALL);
-    // igraph_vector_int_sort(&neighbors);
-    //igraph_vector_print(&neighbors);
+    // igraph_vector_print(&neighbors);
 
     igraph_integer_t neighbors_size = igraph_vector_int_size(&neighbors);
-
     //// //// //// ////
 
     for(igraph_integer_t i=0; i < neighbors_size; i++){ // Label all MIS vertices and their neighbors to the corresponding supernode
@@ -318,29 +302,23 @@ void firstPass(igraph_t* G, int supernode, int m, igraph_integer_t* labels){ // 
     return;
 }
 
-void secondPass(igraph_t* G, int unasgn, igraph_integer_t* labels){ // 5. Second Pass
+void secondPass(igraph_t* G, int unasgn, igraph_integer_t* labels){ // 5. Second Pass - neighbors of MIS neighbors [2-MIS]
     
     if (labels[unasgn] != -1){ return; } // if vertex has label,skip
     else{
         //// Get neighbors of vertex i ////
-        // !!!! get neighbors !!!! method
-
         igraph_vector_int_t unasgn_neighs;
         igraph_vector_int_init(&unasgn_neighs, 0);
 
         igraph_neighbors(G, &unasgn_neighs, unasgn, IGRAPH_ALL);
-        // igraph_vector_int_sort(&unasgn_neighs);
-        //igraph_vector_int_print(&unasgn_neighs);
+        // igraph_vector_int_print(&unasgn_neighs);
 
         igraph_integer_t unasgn_neighs_size = igraph_vector_int_size(&unasgn_neighs);
-
         //// //// //// ////
-
-        //pthread_mutex_t m; //define the lock
 
         for(igraph_integer_t i=0; i < unasgn_neighs_size; i++){ // mark undecided vertices based on if their neighbors have labels
             if (labels[(int)VECTOR(unasgn_neighs)[i]] != -1){
-                pthread_mutex_lock(&m2); // lock // shared? !!!!
+                pthread_mutex_lock(&m2); // lock
                 labels[unasgn] = labels[(int)VECTOR(unasgn_neighs)[i]];
                 pthread_mutex_unlock(&m2); // unlock
             }
@@ -356,22 +334,16 @@ void thirdPass(igraph_t* G, int unasgn, igraph_integer_t* labels, int* supernode
     if (labels[unasgn] != -1){ return; }
     else{
         //// Get neighbors of vertex i ////
-        // !!!! get neighbors !!!! method
         igraph_vector_int_t unasgn_neighs;
         igraph_vector_int_init(&unasgn_neighs, 0);
 
         igraph_neighbors(G, &unasgn_neighs, unasgn, IGRAPH_ALL);
-        // igraph_vector_int_sort(&unasgn_neighs);
-        //igraph_vector_int_print(&unasgn_neighs);
+        // igraph_vector_int_print(&unasgn_neighs);
 
         igraph_integer_t unasgn_neighs_size = igraph_vector_int_size(&unasgn_neighs);
-
         //// //// //// ////
 
-        pthread_mutex_t m; //define the lock
-        // so several threads don't think they have the same supernode label
-
-        pthread_mutex_lock(&m3); // lock // shared? !!!!
+        pthread_mutex_lock(&m3); // lock
         (*supernode_ptr)++;
         igraph_integer_t local_spn = (igraph_integer_t)*supernode_ptr; // make a new supernode
         pthread_mutex_unlock(&m3); // unlock
@@ -379,7 +351,7 @@ void thirdPass(igraph_t* G, int unasgn, igraph_integer_t* labels, int* supernode
         labels[unasgn] = local_spn; // assign neighbors of new supernode to group [overwrites potentially]
         for(igraph_integer_t i=0; i < unasgn_neighs_size; i++){ 
             labels[(int)VECTOR(unasgn_neighs)[i]] = local_spn; 
-        } //!!!! 
+        } 
 
         igraph_vector_int_destroy(&unasgn_neighs);
     }
@@ -393,6 +365,7 @@ void thirdPass(igraph_t* G, int unasgn, igraph_integer_t* labels, int* supernode
 // have a storage vector of edges
 // put edges in a vector in parallel?
 // add_edges??
+
 igraph_t* build_edges(igraph_t* G, igraph_integer_t* labels, int spn){ // 7. Build Edges
 
     assert(igraph_cattribute_has_attr(G, IGRAPH_ATTRIBUTE_EDGE, "weight") == 1);
@@ -410,15 +383,12 @@ igraph_t* build_edges(igraph_t* G, igraph_integer_t* labels, int spn){ // 7. Bui
     igraph_vector_int_init(&el, 0);
     igraph_es_t eids;
     igraph_es_all(&eids, IGRAPH_EDGEORDER_ID);
-
     igraph_get_edgelist(G, &el, 0);
     igraph_edges(G, eids, &el);
     igraph_cattribute_EANV(G, "weight", eids, &weights);
 
     igraph_integer_t sg_eid;
-
     igraph_real_t value, G_weight;
-
     igraph_integer_t target_label, source_label;
 
     cleanup(G);
@@ -435,24 +405,19 @@ igraph_t* build_edges(igraph_t* G, igraph_integer_t* labels, int spn){ // 7. Bui
         pthread_mutex_lock(&m4); // lock 
         igraph_get_eid(&subgraph, &sg_eid, target_label, source_label, IGRAPH_UNDIRECTED, false);
         
-        //pthread_mutex_unlock(&be1); // lock 
         if(sg_eid == -1 && target_label != source_label){ // edge is not in subgraph
 
             //printf("!!!! %lld, %lld %f!!!!\n", target_label, source_label, G_weight);
-            // lock 
             igraph_add_edge(&subgraph, target_label, source_label); 
             igraph_get_eid(&subgraph, &sg_eid, target_label, source_label, IGRAPH_UNDIRECTED, false);
             SETEAN(&subgraph, w, sg_eid, G_weight); // assign G_weight to new edge weight
-            // unlock 
 
         } else if(sg_eid != -1 && target_label != source_label){ // edge is in subgraph
 
             // get edge weight
             // new edge weight = G_weight + old
-            // lock 
             value = G_weight + EAN(&subgraph, w, sg_eid);
             SETEAN(&subgraph, w, sg_eid, value);
-            // unlock 
             //printf("!! %lld, %lld %f!!\n", target_label, source_label, value);
 
         }pthread_mutex_unlock(&m4); // unlock
@@ -472,7 +437,7 @@ igraph_t* build_edges(igraph_t* G, igraph_integer_t* labels, int spn){ // 7. Bui
 
 igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
 
-    // list of vertices to assign to supernodes
+    // list of vertices to assign to supernodes - unassigned vertices 
     int* vertex_set = NULL;
     vertex_set = (int*)calloc(N,sizeof(int));
     for (int i = 0; i < N; i++){ vertex_set[i] = i; }
@@ -509,13 +474,13 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
 
     // cleanup vertex_set and labels == remove the vertices with labels 
     int new_len = 0;
-    for(int i=0; i < N; i++){ 
+    for(int i=0; i < N; i++){ // new size of vertex set
         if(labels[i] == -1){ 
             new_len++;
         } 
     }
 
-    int nvs[new_len]; 
+    int nvs[new_len];           // why do I keep resizing vertex_set and just use nvs?
     int k=0;
     for(int i=0; i < N; i++){ 
         if(labels[i] == -1){ 
@@ -523,7 +488,7 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
         } 
     }
 
-    vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int)); // resive set of unlabeled vertices
+    vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int)); // resize set of unlabeled vertices
     memcpy(vertex_set, nvs, sizeof(nvs));
 
     // 5. Second Pass
@@ -590,7 +555,6 @@ void display_ratio(igraph_t* G){
 
 int cleanup(igraph_t* G){
 	printf("NCLEANUP: %" IGRAPH_PRId "\n", igraph_vcount(G));
-
     igraph_destroy(G);
 
     return 0;
@@ -605,7 +569,7 @@ int recursion_fcn(igraph_t* G, int goal_verts){ // 1. Base Case/Recursive Step
 
     // Base Case 
     if (graph_size <= goal_verts){
-        cleanup(G); // no cleanup? -- sigabrts if you try to clean up this last graph
+        cleanup(G);
         return 0;
     }
 
@@ -632,20 +596,20 @@ int main(int argc, char *argv[]){
 
     igraph_set_attribute_table(&igraph_cattribute_table);
 
-    int N = atoi(argv[1]); // 1961;        // number of vertices in data graph
+    int N = atoi(argv[1]);        // number of vertices in data graph
 
-    // load G in from a csv file
+    // load G in from a ncol file
     int MAXNAME = 1024; // max length of a file name
     char filename[MAXNAME];
     memset( filename, '\0', MAXNAME*sizeof(char) );
-    strcpy(filename, argv[2]); //"csv/netz4504.ncol"); // csv file to read from
-    // "csv/ash85.csv",   //False,  #N=85
-    // "csv/netz4504.csv" //False,  #N=1961
-    // "csv/gemat11.csv"  // False, #N=4929
-    // "csv/bcspwr10.csv" // False, #N=5300
-    // "csv/bcsstk17.csv" // False, #N=10974
-    // "csv/shock-9.csv"  // False, #N=36476
-    // "csv/ecology1.csv" // False, #N=1000000
+    strcpy(filename, argv[2]); // ncol file to read from
+    // "csv/ash85.csv",   // #N=85
+    // "csv/netz4504.csv" // #N=1961
+    // "csv/gemat11.csv"  // #N=4929
+    // "csv/bcspwr10.csv" // #N=5300
+    // "csv/bcsstk17.csv" // #N=10974
+    // "csv/shock-9.csv"  // #N=36476
+    // "csv/ecology1.csv" // #N=1000000
 
     igraph_t g = ncol_graph(filename, N);
 
