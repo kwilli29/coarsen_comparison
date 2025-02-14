@@ -1,0 +1,290 @@
+Graph creation success
+1000000
+2998000
+attr exists: 1
+N: 1000000 ecount: 2998000
+
+!: 1000000,2998000,0
+
+goal_verts: 166665
+
+I: 0, 1000000, 166665
+
+1B1: 40.677926
+M1 Length: 392350
+2B2: 1.296588
+SPN: 392350
+
+NCLEANUP: 1000000
+building graph
+done building
+3B3: 5794.094790
+0x56492fa00cd8
+
+!: 392351,502758,1
+
+
+I: 1, 392351, 166665
+
+1B1: 13.529893
+M1 Length: 273154
+2B2: 0.177422
+SPN: 273158
+
+NCLEANUP: 392351
+building graph
+done building
+3B3: 551.840587
+0x56492fa00cd8
+
+!: 273159,111139,2
+
+
+I: 2, 273159, 166665
+
+1B1: 5.714417
+M1 Length: 246444
+2B2: 0.054999
+SPN: 246455
+
+NCLEANUP: 273159
+building graph
+done building
+3B3: 52.708544
+0x56492fa00cd8
+
+!: 246456,25300,3
+
+
+I: 3, 246456, 166665
+
+1B1: 4.067908
+M1 Length: 239287
+2B2: 0.031061
+SPN: 239294
+
+NCLEANUP: 246456
+building graph
+done building
+3B3: 7.649262
+0x56492fa00cd8
+
+!: 239295,6396,4
+
+
+I: 4, 239295, 166665
+
+1B1: 3.999483
+M1 Length: 237038
+2B2: 0.020411
+SPN: 237042
+
+NCLEANUP: 239295
+building graph
+done building
+3B3: 1.969980
+0x56492fa00cd8
+
+!: 237043,1775,5
+
+
+I: 5, 237043, 166665
+
+1B1: 3.701701
+M1 Length: 236346
+2B2: 0.119142
+SPN: 236348
+
+NCLEANUP: 237043
+building graph
+done building
+3B3: 0.658876
+0x56492fa00cd8
+
+!: 236349,522,6
+
+
+I: 6, 236349, 166665
+
+1B1: 3.515111
+M1 Length: 236130
+2B2: 0.009308
+SPN: 236131
+
+NCLEANUP: 236349
+building graph
+done building
+3B3: 0.345570
+0x56492fa00cd8
+
+!: 236132,139,7
+
+
+I: 7, 236132, 166665
+
+1B1: 3.500622
+M1 Length: 236071
+2B2: 0.014030
+SPN: 236071
+
+NCLEANUP: 236132
+building graph
+done building
+3B3: 0.263544
+0x56492fa00cd8
+
+!: 236072,41,8
+
+
+I: 8, 236072, 166665
+
+1B1: 3.419356
+M1 Length: 236054
+2B2: 0.018306
+SPN: 236054
+
+NCLEANUP: 236072
+building graph
+done building
+3B3: 0.178849
+0x56492fa00cd8
+
+!: 236055,14,9
+
+
+I: 9, 236055, 166665
+
+1B1: 3.433706
+M1 Length: 236047
+2B2: 0.017659
+SPN: 236047
+
+NCLEANUP: 236055
+building graph
+done building
+3B3: 0.047145
+0x56492fa00cd8
+
+!: 236048,4,10
+
+
+I: 10, 236048, 166665
+
+1B1: 3.435838
+M1 Length: 236046
+2B2: 0.016990
+SPN: 236046
+
+NCLEANUP: 236048
+building graph
+done building
+3B3: 0.017566
+0x56492fa00cd8
+
+!: 236047,2,11
+
+
+I: 11, 236047, 166665
+
+1B1: 3.422030
+M1 Length: 236046
+2B2: 0.016885
+SPN: 236046
+
+NCLEANUP: 236047
+building graph
+done building
+3B3: 0.000910
+0x56492fa00cd8
+
+!: 236047,1,12
+
+
+I: 12, 236047, 166665
+
+1B1: 3.436072
+M1 Length: 236046
+2B2: 0.017780
+SPN: 236046
+
+NCLEANUP: 236047
+building graph
+done building
+3B3: 0.000811
+0x56492fa00cd8
+
+!: 236047,1,13
+
+
+I: 13, 236047, 166665
+
+1B1: 3.451907
+M1 Length: 236047
+2B2: 0.017518
+SPN: 236047
+
+NCLEANUP: 236047
+building graph
+done building
+3B3: 0.016297
+0x56492fa00cd8
+
+!: 236048,2,14
+
+
+I: 14, 236048, 166665
+
+1B1: 3.422914
+M1 Length: 236047
+2B2: 0.018161
+SPN: 236047
+
+NCLEANUP: 236048
+building graph
+done building
+3B3: 0.002174
+0x56492fa00cd8
+
+!: 236048,1,15
+
+
+I: 15, 236048, 166665
+
+1B1: 3.398161
+M1 Length: 236048
+2B2: 0.017595
+SPN: 236048
+
+NCLEANUP: 236048
+building graph
+done building
+3B3: 0.007819
+0x56492fa00cd8
+
+!: 236049,1,16
+
+
+I: 16, 236049, 166665
+
+1B1: 3.432086
+M1 Length: 236048
+2B2: 0.018087
+SPN: 236048
+
+NCLEANUP: 236049
+building graph
+done building
+3B3: 0.000253
+0x56492fa00cd8
+
+!: 236049,0,17
+
+
+I: 17, 236049, 166665
+
+NCLEANUP: 236049
+
+T: 6521.322150
+RT: 5104.670903
+
+!: 1000000,2998000,0

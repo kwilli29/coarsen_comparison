@@ -1,0 +1,209 @@
+Graph creation success
+1000000
+2998000
+attr exists: 1
+N: 1000000 ecount: 2998000
+
+!: 1000000,2998000,0
+
+goal_verts: 166665
+
+I: 0, 1000000, 166665
+
+1B1: 41.131653
+M1 Length: 392076
+2B2: 1.377620
+SPN: 392077
+
+NCLEANUP: 1000000
+building graph
+done building
+3B3: 5704.164780
+0x63c27a416cd8
+
+!: 392078,503595,1
+
+
+I: 1, 392078, 166665
+
+1B1: 13.108734
+M1 Length: 272622
+2B2: 0.176491
+SPN: 272624
+
+NCLEANUP: 392078
+building graph
+done building
+3B3: 561.298599
+0x63c27a416cd8
+
+!: 272625,110475,2
+
+
+I: 2, 272625, 166665
+
+1B1: 5.736454
+M1 Length: 246160
+2B2: 0.058251
+SPN: 246167
+
+NCLEANUP: 272625
+building graph
+done building
+3B3: 55.237230
+0x63c27a416cd8
+
+!: 246168,25823,3
+
+
+I: 3, 246168, 166665
+
+1B1: 4.082889
+M1 Length: 238914
+2B2: 0.029778
+SPN: 238924
+
+NCLEANUP: 246168
+building graph
+done building
+3B3: 8.860072
+0x63c27a416cd8
+
+!: 238925,6429,4
+
+
+I: 4, 238925, 166665
+
+1B1: 3.773581
+M1 Length: 236806
+2B2: 0.021320
+SPN: 236813
+
+NCLEANUP: 238925
+building graph
+done building
+3B3: 1.951640
+0x63c27a416cd8
+
+!: 236814,1690,5
+
+
+I: 5, 236814, 166665
+
+1B1: 3.718398
+M1 Length: 236167
+2B2: 0.015849
+SPN: 236168
+
+NCLEANUP: 236814
+building graph
+done building
+3B3: 0.574272
+0x63c27a416cd8
+
+!: 236169,477,6
+
+
+I: 6, 236169, 166665
+
+1B1: 3.614654
+M1 Length: 235956
+2B2: 0.019140
+SPN: 235957
+
+NCLEANUP: 236169
+building graph
+done building
+3B3: 0.364551
+0x63c27a416cd8
+
+!: 235958,128,7
+
+
+I: 7, 235958, 166665
+
+1B1: 3.525545
+M1 Length: 235903
+2B2: 0.014934
+SPN: 235903
+
+NCLEANUP: 235958
+building graph
+done building
+3B3: 0.323279
+0x63c27a416cd8
+
+!: 235904,40,8
+
+
+I: 8, 235904, 166665
+
+1B1: 3.455207
+M1 Length: 235886
+2B2: 0.017399
+SPN: 235886
+
+NCLEANUP: 235904
+building graph
+done building
+3B3: 0.129695
+0x63c27a416cd8
+
+!: 235887,8,9
+
+
+I: 9, 235887, 166665
+
+1B1: 3.438467
+M1 Length: 235885
+2B2: 0.017524
+SPN: 235885
+
+NCLEANUP: 235887
+building graph
+done building
+3B3: 0.033097
+0x63c27a416cd8
+
+!: 235886,3,10
+
+
+I: 10, 235886, 166665
+
+1B1: 3.449387
+M1 Length: 235884
+2B2: 0.017007
+SPN: 235884
+
+NCLEANUP: 235886
+building graph
+done building
+3B3: 0.000866
+0x63c27a416cd8
+
+!: 235885,1,11
+
+
+I: 11, 235885, 166665
+
+1B1: 3.433032
+M1 Length: 235884
+2B2: 0.017169
+SPN: 235884
+
+NCLEANUP: 235885
+building graph
+done building
+3B3: 0.000253
+0x63c27a416cd8
+
+!: 235885,0,12
+
+
+I: 12, 235885, 166665
+
+NCLEANUP: 235885
+
+T: 6427.203998
+
+!: 1000000,2998000,0

@@ -451,7 +451,6 @@ struct Graph* build_edges_1D(struct Graph* G, int* labels, int spn){
 
             // no  = add it
             if ( (row_spn<spn) && (col_spn<spn) && edge_matrix[(row_spn*index1)+col_spn]==0 && edge_matrix[(col_spn*index1)+row_spn]==0 )  {
-                
                 edge_matrix[(row_spn*index1)+col_spn] = val;
                 edge_matrix[(col_spn*index1) +row_spn] = val;
                 index+=2;
@@ -467,8 +466,6 @@ struct Graph* build_edges_1D(struct Graph* G, int* labels, int spn){
     }
 
     // Convert the edge matrix to the subgraph csr
-
-	cleanup(G); // Do not need larger graph anymore, free the memory
 
 	static struct Graph subgraph; // create new subgraph
     subgraph.N = spn;
@@ -501,6 +498,10 @@ struct Graph* build_edges_1D(struct Graph* G, int* labels, int spn){
 
     quickSort(subgraph.row_ptr, 0, index-1, subgraph.col_ptr, subgraph.value_ptr); // sort the CSR
     
+    printf("hereD:\n");
+
+    cleanup(G); // Do not need larger graph anymore, free the memory
+
     return (&subgraph); // return pointer to subgraph
 
 }
@@ -544,9 +545,11 @@ struct Graph* build_edges(struct Graph* G, int* labels, int spn){ // 7. Build Ed
             
     }
 
-    // Convert the edge matrix to the subgraph csr
+    printf("hereD:\n");
+    cleanup(G); // Do not need larger graph anymore, free the memory
+    printf("here ):\n");
 
-	cleanup(G); // Do not need larger graph anymore, free the memory
+    // Convert the edge matrix to the subgraph csr
 
 	static struct Graph subgraph; // create new subgraph
     subgraph.N = spn;
@@ -577,7 +580,7 @@ struct Graph* build_edges(struct Graph* G, int* labels, int spn){ // 7. Build Ed
     }
 
     quickSort(subgraph.row_ptr, 0, index-1, subgraph.col_ptr, subgraph.value_ptr); // sort the CSR
-    
+
     return (&subgraph); // return pointer to subgraph   
 }
 
@@ -598,7 +601,7 @@ struct Graph* kokkos_coarsen(struct Graph* G, int N){ // 2. Kokkos Coarsen
     int M1_length=0;                            // get the length of the MIS = # of starting supernodes
     while(M1[M1_length] != -1){ M1_length+=1;}
 
-    printf("M1 Length: %d,\n", M1_length);
+    printf("M1 Length: %d\n", M1_length);
 
     // print out MIS
     //printf("M1: "); for(int i=0;i<M1_length;i++){ printf("%d ", M1[i]); } printf("\n");
@@ -669,11 +672,14 @@ struct Graph* kokkos_coarsen(struct Graph* G, int N){ // 2. Kokkos Coarsen
 
     // 6. Third Pass
     int* thirdPasspntr = vertex_set;
-    cilk_for(int i=0; i < new_len; i++){ // create new supernodes or group still unlabeled vertices
+    if(new_len){
+        cilk_for(int i=0; i < new_len; i++){ // create new supernodes or group still unlabeled vertices
         thirdPass(G, thirdPasspntr[i], labels, spn_ptr);
     }
-
+    }
     cilk_sync; // sync
+
+    printf("SPN: %d\n\n", supernode);
 
     // 7. Build the subgraph edge relationships based on the original graph
     struct Graph* subgraph;
@@ -683,8 +689,9 @@ struct Graph* kokkos_coarsen(struct Graph* G, int N){ // 2. Kokkos Coarsen
         subgraph = build_edges(G, labels, supernode);
     }
 
-    if (new_len) { free(vertex_set); } // free vertex set memory
-    
+
+    if (vertex_set) { free(vertex_set); } // free vertex set memory
+
     return subgraph; // return graph pointer
 }
 
@@ -696,9 +703,13 @@ void display_graph_info(struct Graph* G){
     printf("Vals: ");for(int i=0; i < G->active_index;i++){ printf("%lf ", G->value_ptr[i]);} printf("\n");
     return;
 }
-
+void display_ratio(struct Graph* G){
+    printf("\n!: %d,", G->N);
+    printf("%d,", G->active_index);
+    printf("%d\n\n", ITERATIONS);
+    return;
+}
 int cleanup(struct Graph* G){
-    printf("NCLEANUP: %d\n", G->N);
     free(G->row_ptr);
     free(G->col_ptr);
     free(G->value_ptr);
@@ -712,25 +723,33 @@ int recursion_fcn(struct Graph* G, int goal_verts){ // 1. Base Case/Recursive St
     // get graph size
     int graph_size = G->N;
 
+    printf("\nI: %d,%d,%d\n\n", ITERATIONS, graph_size, goal_verts);
+
     // Base Case 
     if (graph_size <= goal_verts){
         cleanup(G); // no cleanup? -- sigabrts if you try to clean up this last graph
         return 0;
     }
 
+
     // Recursion
     struct Graph* subgraph = kokkos_coarsen(G, graph_size); // pass in pointer to G AND G's size
 
     // print subgraph & number of vertices coarsened
-    display_graph_info(subgraph);
-    printf("Vertices coarsened: %d - %d = %d\n", graph_size, (graph_size - subgraph->N), subgraph->N);
+
+    //display_graph_info(subgraph);
+    //printf("Vertices coarsened: %d - %d = %d\n", graph_size, (graph_size - subgraph->N), subgraph->N);   
+
+    printf("%p\n", subgraph);
 
     ITERATIONS+=1;
+
+    display_ratio(subgraph);
 
     return recursion_fcn(subgraph, goal_verts);
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
     // random seed
     // srand(time(NULL));
@@ -740,18 +759,13 @@ int main(){
     if (pthread_mutex_init(&m2, NULL) != 0) { perror("Mutex initialization failed"); return 1;}
     if (pthread_mutex_init(&m3, NULL) != 0) { perror("Mutex initialization failed"); return 1;}
 
-    int MAXNAME = 1024; // max length of a file name
-
-    int N = 85;        // number of vertices in data graph
-    bool g_sym = false;  // is the data symmetric
+    int N = atoi(argv[1]); // 1961;        // number of vertices in data graph
 
     // load G in from a csv file
+    int MAXNAME = 1024; // max length of a file name
     char filename[MAXNAME];
     memset( filename, '\0', MAXNAME*sizeof(char) );
-    strcpy(filename, "csv/ash85.csv"); // csv file to read from
-     // "csv/simple_graph_000.csv"  //True,  # N=5
-    // "csv/kk_simpleEx.csv",       //True,  # N=6
-    // "csv/simple_graph_001.csv",  //True,  # N=7
+    strcpy(filename, argv[2]); //"csv/netz4504.ncol"); // csv file to read from
     // "csv/ash85.csv",         //False, # N=85
     // "csv/netz4504.csv" //False, # N=1961
     // "csv/gemat11.csv" // False, #N=4929
@@ -761,26 +775,27 @@ int main(){
 
     struct Graph* graph_ptr; // G = ptr to graph struct w/ csr data
     if (N < 100){
-        graph_ptr = csv_to_graph_small(filename, N, g_sym); // smaller graph
+        graph_ptr = csv_to_graph_small(filename, N, false); // smaller graph
     } else {
-        graph_ptr = csv_to_graph_large(filename, N, g_sym); // bigger graph
+        graph_ptr = csv_to_graph_large(filename, N, false); // bigger graph
     }
 
     //display_graph_info(graph_ptr); // Optional: Display initial graph
-
+    display_ratio(graph_ptr);
     int goal_verts = (int)(N/2) - 1; // set minimum goal vertices
     printf("goal_verts: %d\n", goal_verts);
 
     clock_t start = clock();
 
-    int exit1 = recursion_fcn(graph_ptr, goal_verts); // 1. Begin recursive coarsening
+    recursion_fcn(graph_ptr, goal_verts); // 1. Begin recursive coarsening
 
     clock_t end = clock();
 
     double myTime = (((double)end - start)/CLOCKS_PER_SEC);
-    printf("# of Iterations: %d\n", ITERATIONS);
-    printf("Exit %d \n", exit1);
-    printf("Coarsened in %f seconds.\n", myTime); //
+    //printf("# of Iterations: %d\n", ITERATIONS);
+    //printf("Exit %d \n", exit1);
+    printf("T: %f\n", myTime); //
+    //printf("Coarsened in %f seconds.\n", myTime); //
 
 
     pthread_mutex_destroy(&m0);

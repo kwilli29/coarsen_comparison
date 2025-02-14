@@ -1,0 +1,30 @@
+Graph creation success
+85
+304
+attr exists: 1
+N: 85 ecount: 304
+
+!: 85,304,0
+
+goal_verts: 13
+
+I: 0, 85, 13
+
+1B1: 0.001118
+M1 Length: 12
+2B2: 0.000053
+SPN: 12
+
+NCLEANUP: 85
+3B3: 0.000328
+
+!: 13,15,1
+
+
+I: 1, 13, 13
+
+NCLEANUP: 13
+
+T: 0.008923
+RT: 0.001517
+!: 85,304,0

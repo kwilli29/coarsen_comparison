@@ -16,69 +16,7 @@ struct Graph{
     // submeta if ever relevant
 };
 
-struct NodeEdgePair{
-    int N;
-    int active_index;
-};
-
 void quickSort(int [], int, int, int [], float []);
-
-igraph_t ncol_graph(char input_file[], int N) {
-   
-    igraph_t g;
-
-    FILE *ifile = fopen(input_file, "r"); //fmemopen((void*) data, size, "r");
-    if (!ifile) {
-        return g;
-    }
-
-    igraph_vector_t weights;
-    igraph_vector_init(&weights, 0);
-
-    igraph_vector_int_t el;
-    igraph_vector_int_init(&el, 0);
-
-    igraph_es_t eids;
-    igraph_es_all(&eids, IGRAPH_EDGEORDER_ID);
-
-    igraph_integer_t i, j, n;
-
-    if (igraph_read_graph_ncol(&g, ifile, NULL, 1, IGRAPH_ADD_WEIGHTS_YES, IGRAPH_UNDIRECTED) == IGRAPH_SUCCESS) {
-        printf("Graph creation success\n");
-        printf("%" IGRAPH_PRId "\n", igraph_vcount(&g));
-        printf("%" IGRAPH_PRId "\n", igraph_ecount(&g));
-    }
-
-    assert(igraph_vector_int_size(&g.os) == igraph_vcount(&g)+1);
-    assert(igraph_vector_int_size(&g.is) == igraph_vcount(&g)+1);
-   
-    igraph_get_edgelist(&g, &el, 0);
-    igraph_edges(&g, eids, &el);
-
-    const char* w = "weight";
-    printf("attr exists: %d\n", igraph_cattribute_has_attr(&g, IGRAPH_ATTRIBUTE_EDGE, w));
-
-    igraph_cattribute_EANV(&g, w, eids, &weights);
-
-    n = igraph_ecount(&g);
-    //for (i = 0, j = 0; i < n; i++, j += 2) {
-    //    printf("%" IGRAPH_PRId " -- %" IGRAPH_PRId ": %g\n",VECTOR(el)[j], VECTOR(el)[j + 1], VECTOR(weights)[i]);
-    //}
-
-    printf("N: %d ecount: %" IGRAPH_PRId "\n", N, igraph_ecount(&g));
-    
-    // Clean up
-
-    igraph_vector_int_destroy(&el);
-    igraph_vector_destroy(&weights);
-    igraph_es_destroy(&eids);
-    //igraph_destroy(&g);
-
-    fclose(ifile);
-
-    return g;
-}
-
 
 struct Graph* csv_to_graph_small(char input_file[], int N, bool sym){
     
@@ -211,13 +149,7 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
             } else if(arr == 1){
                 max_col[index] = atoi(token);
             } else if (arr == 2){
-                max_value[index] = atof(token);
-                /*for(int k=0; k < strlen(token); k++){
-                    max_value[index] = (float)(token[k] - '0');
-                    printf("token %lf\n", max_value[index]);
-                    break;
-                }*/
-                
+                max_value[index] = atof(token);                
             }
 
             if ( (arr >= 2) && (sym == false) ){ // if data is not symmetric, make csr symmetric
@@ -239,13 +171,10 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
 
     }
 
-    //index--;
-
     static struct Graph ret_graph; // return graph
     ret_graph.N = N;
     ret_graph.active_index = index;
     ret_graph.row_ptr  = (int*)calloc(index,sizeof(int));
-    //ret_graph.row_inds = (int*)calloc(N,sizeof(int));
     ret_graph.col_ptr = (int*)calloc(index,sizeof(int));
     ret_graph.value_ptr = (float*)calloc(index,sizeof(float)); // floats
 
@@ -256,32 +185,6 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
 
     quickSort(ret_graph.row_ptr, 0, index-1, ret_graph.col_ptr, ret_graph.value_ptr);
 
-    // assumes every node has at least itself as a neighbor???? // 0 0 0 1 1 2 2 2 2
-                                                                // 0 3 5
-    
-    /*ret_graph.row_inds[0] = ret_graph.row_ptr[0]; // ?? = 0;?
-    int n_ind = 0;
-    for(int i = 0; i < index; i++){
-        if(ret_graph.row_ptr[i] != n_ind){ // ret_graph.row_inds[n_ind]
-            n_ind++;
-            ret_graph.row_inds[n_ind] = i;
-            if ((ret_graph.row_inds[n_ind] - ret_graph.row_inds[n_ind-1]) == 1){
-                printf("!! %d %d !!\n",n_ind, n_ind-1);
-            }
-        }
-    }*/
-/*
-    printf("rowind size: %d, N: %d\nRow Inds: ", n_ind+1, N);
-    for(int i =0; i < n_ind; i++){
-        printf("%d ", ret_graph.row_inds[i]);
-    }printf("\n");
-
-    printf("\nGraph info:\n");
-    printf("N: %d\n# Edges: %d\n", ret_graph.N, ret_graph.active_index);
-    printf("Rows: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%d ", ret_graph.row_ptr[i]);} printf("\n");
-    printf("Cols: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%d ", ret_graph.col_ptr[i]);} printf("\n");
-    printf("Vals: ");for(int i=0; i < ret_graph.active_index;i++){ printf("%lf ", ret_graph.value_ptr[i]);} printf("\n"); */
-
     free(max_row);
     free(max_col);
     free(max_value);
@@ -289,6 +192,58 @@ struct Graph* csv_to_graph_large(char input_file[], int N, bool sym){
 	fclose(stream);
 
     return (&ret_graph);
+}
+
+igraph_t ncol_graph(char input_file[], int N) {
+   
+    igraph_t g;
+
+    // open ncol file
+    FILE *ifile = fopen(input_file, "r"); //fmemopen((void*) data, size, "r");
+    if (!ifile) {
+        return g;
+    }
+
+    // init weights vector, edgelist vector, and edge selector for edge ids
+    igraph_vector_t weights;
+    igraph_vector_init(&weights, 0);
+
+    igraph_vector_int_t el;
+    igraph_vector_int_init(&el, 0);
+
+    igraph_es_t eids;
+    igraph_es_all(&eids, IGRAPH_EDGEORDER_ID);
+
+    // read in ncol file to graph
+    if (igraph_read_graph_ncol(&g, ifile, NULL, 1, IGRAPH_ADD_WEIGHTS_YES, IGRAPH_UNDIRECTED) == IGRAPH_SUCCESS) {
+        printf("Graph creation success\n");
+        printf("%" IGRAPH_PRId "\n", igraph_vcount(&g));
+        printf("%" IGRAPH_PRId "\n", igraph_ecount(&g));
+    }
+
+    assert(igraph_vector_int_size(&g.os) == igraph_vcount(&g)+1);
+    assert(igraph_vector_int_size(&g.is) == igraph_vcount(&g)+1);
+   
+    // get all the edges and assign "weight" attributes to them
+    igraph_get_edgelist(&g, &el, 0);
+    igraph_edges(&g, eids, &el);
+
+    const char* w = "weight";
+    printf("attr exists: %d\n", igraph_cattribute_has_attr(&g, IGRAPH_ATTRIBUTE_EDGE, w));
+
+    // match weights to the all edges
+    igraph_cattribute_EANV(&g, w, eids, &weights);
+
+    printf("N: %d ecount: %" IGRAPH_PRId "\n", N, igraph_ecount(&g));
+    
+    // Clean up
+    igraph_vector_int_destroy(&el);
+    igraph_vector_destroy(&weights);
+    igraph_es_destroy(&eids);
+
+    fclose(ifile);
+
+    return g;
 }
 
 /********************************************************************/

@@ -1,0 +1,1201 @@
+xcrun ../opencilk/bin/clang -fopencilk -O3 -Og -g cn_c.c -I/opt/homebrew/Cellar/igraph/0.10.15_1/include/igraph -L/opt/homebrew/Cellar/igraph/0.10.15_1/lib -ligraph -o cn_c
+1
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+2
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+3
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+4
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+5
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+6
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+7
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+8
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+9
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+10
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+11
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+12
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+13
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+14
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+15
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+16
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+17
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+18
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+19
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+20
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+21
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+22
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+23
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+24
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+25
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+26
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+27
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+28
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+29
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+30
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+31
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+32
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+33
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+34
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+35
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+36
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+37
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+38
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+39
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+40
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+41
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+42
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+43
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+44
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+45
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+46
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+47
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+48
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+49
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+50
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+51
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+52
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+53
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+54
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+55
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+56
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+57
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+58
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+59
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+60
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+61
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+62
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+63
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+64
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+65
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+66
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+67
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+68
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+69
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+70
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+71
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+72
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+73
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+74
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+75
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+76
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+77
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+78
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+79
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+80
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+81
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+82
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+83
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+84
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+85
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+86
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+87
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+88
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+89
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+90
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+91
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+92
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+93
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+94
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+95
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+96
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+97
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+98
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+99
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+
+100
+Graph creation success
+36476
+71290
+attr exists: 1
+N: 36476 ecount: 71290
+
+!: 36476,71290,0
+goal_verts: 6078
+
+I: 0, 36476, 6078
+

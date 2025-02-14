@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <cilk/cilk.h>
-#include <time.h>
+#include <assert.h>
+#include <sys/time.h>
 #include <math.h>
 #include <pthread.h> //pthread library
 #include "convert_types.c"
@@ -39,9 +40,15 @@ pthread_mutex_t m4; //define the lock
 
 int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Kokkos paper
     igraph_integer_t numVerts = igraph_vcount(G);   // size of G
+    
+    //if (numVerts <= 1000000){
+    //    callocstats = false;
+    //     int rowStatus[(int)numVerts]; // helps track status of all vertices
+    //   int colStatus[(int)numVerts]; // helps track status of local minima amongst neighbors
+    //} 
+    int* rowStatus = (int*)calloc((int)numVerts,sizeof(int));
+    int* colStatus = (int*)calloc((int)numVerts,sizeof(int)); 
 
-    int rowStatus[(int)numVerts]; // helps track status of all vertices
-    int colStatus[(int)numVerts]; // helps track status of local minima amongst neighbors
     for (int i = 0; i < (int)numVerts; i++){
         rowStatus[i] = i; 
         colStatus[i] = OUT;
@@ -143,6 +150,8 @@ int* kokkos_mis(igraph_t* G){ // 3. Build MIS of supernodes roughly based off Ko
     free(in_vertices);
     free(worklist1);
     free(worklist2);
+    free(rowStatus);
+    free(colStatus);
 
     return M1; // return pointer to 2MIS
 }
@@ -447,7 +456,13 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
 
     // 3. Find the 2-Maximal Independent Set
     int* M1= NULL;
+    struct timeval start_time,end_time;
+    gettimeofday(&start_time, NULL);
     M1 = kokkos_mis(G);
+    gettimeofday(&end_time, NULL);
+    double B1 = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
+    printf("1B1: %lf\n", B1);
+    
     if(!M1){printf("error\n");}
 
     int M1_length=0;                            // get the length of the MIS = # of starting supernodes
@@ -459,10 +474,13 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
     // printf("M1: "); for(int i=0;i<M1_length;i++){ printf("%d ", M1[i]); } printf("\n");
     
     // Create array where indices = vertices & values = supernode vertices is grouped under
-    igraph_integer_t labels[N];
+    gettimeofday(&start_time, NULL);
+    printf("herekm1\n");
+    //igraph_integer_t labels[N];
+    igraph_integer_t* labels = (igraph_integer_t*)calloc(N,sizeof(igraph_integer_t));
+    printf("herekm2\n");
     memset(labels, -1, N*sizeof(igraph_integer_t));
 
-    
     // 4. First Pass
     int* firstPasspntr = M1;
     cilk_for(int i = 0; i < M1_length; i++){
@@ -529,6 +547,9 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
             thirdPass(G, thirdPasspntr[i], labels, spn_ptr);
         }
     }
+    gettimeofday(&end_time, NULL);
+    double B2 = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
+    printf("2B2: %lf\n", B2);
 
     cilk_sync; // sync
 
@@ -539,18 +560,25 @@ igraph_t* kokkos_coarsen(igraph_t* G, igraph_integer_t N){ // 2. Kokkos Coarsen
 
     // 7. Build the subgraph edge relationships based on the original graph
 
+    gettimeofday(&start_time, NULL);
+    //start = clock();
     igraph_t* subgraph = build_edges(G, labels, supernode);
+    gettimeofday(&end_time, NULL);
+    double B3 = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
+    //end = clock();
+    //double B3 = (((double)end - start)/CLOCKS_PER_SEC);
+    printf("3B3: %lf\n", B3);
 
     if (new_len) { free(vertex_set); } // free vertex set memory
-    
+
     return subgraph; // return graph pointer
 }
 
-void display_ratio(igraph_t* G){
+igraph_t* display_ratio(igraph_t* G){
     printf("\n!: %" IGRAPH_PRId  ",", igraph_vcount(G));
     printf("%" IGRAPH_PRId  ",", igraph_ecount(G));
-    printf("%d\n", ITERATIONS);
-    return;
+    printf("%d\n\n", ITERATIONS);
+    return G;
 }
 
 int cleanup(igraph_t* G){
@@ -565,10 +593,11 @@ int recursion_fcn(igraph_t* G, int goal_verts){ // 1. Base Case/Recursive Step
 
     // get graph size
     igraph_integer_t graph_size = igraph_vcount(G);
+    igraph_integer_t edge_num = igraph_ecount(G);
     printf("\nI: %d, %" IGRAPH_PRId  ", %d\n\n", ITERATIONS, graph_size, goal_verts);
 
     // Base Case 
-    if (graph_size <= goal_verts){
+    if (graph_size <= goal_verts || edge_num <= 0){
         cleanup(G);
         return 0;
     }
@@ -578,7 +607,7 @@ int recursion_fcn(igraph_t* G, int goal_verts){ // 1. Base Case/Recursive Step
 
     ITERATIONS+=1;
 
-    display_ratio(subgraph);
+    subgraph = display_ratio(subgraph);
 
     return recursion_fcn(subgraph, goal_verts);
 }
@@ -615,24 +644,34 @@ int main(int argc, char *argv[]){
 
     igraph_t* graph_ptr = &g;
 
-    display_ratio(graph_ptr);
+    graph_ptr = display_ratio(graph_ptr);
+    igraph_integer_t ec = igraph_ecount(&g);
     //display_graph_info(graph_ptr); // Optional: Display initial graph
 
     int goal_verts = (int)(N/6) - 1; // set minimum goal vertices
     printf("goal_verts: %d\n", goal_verts);
 
+    struct timeval start_time,end_time;
+    gettimeofday(&start_time, NULL);
     clock_t start = clock();
 
     int exit1 = recursion_fcn(graph_ptr, goal_verts); // 1. Begin recursive coarsening
-
+    
     clock_t end = clock();
+    gettimeofday(&end_time, NULL);
+
+    double realTime = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
 
     double myTime = (((double)end - start)/CLOCKS_PER_SEC);
     //printf("# of Iterations: %d\n", ITERATIONS);
     //printf("Exit %d \n", exit1);
     printf("\nT: %f\n", myTime);
+    printf("RT: %lf", realTime);
     //printf("Coarsened in %f seconds.\n", myTime); //
 
+    printf("\n!: %d,", N);
+    printf("%" IGRAPH_PRId  ",", ec);
+    printf("%d\n", 0);
 
     pthread_mutex_destroy(&m0);
     pthread_mutex_destroy(&m2);

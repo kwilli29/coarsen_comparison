@@ -1,0 +1,2001 @@
+make: `coarse_cilk' is up to date.
+1
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.003516
+2
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.007721
+3
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009262
+4
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.006284
+5
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.003371
+6
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.003956
+7
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.007792
+8
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 12
+SPN: 12
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,12,41
+
+NCLEANUP: 12
+T: 0.008574
+9
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.009181
+10
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.009682
+11
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.007323
+12
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.011079
+13
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010216
+14
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.006316
+15
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.008507
+16
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.011624
+17
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010435
+18
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008252
+19
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.008260
+20
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.007294
+21
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.008555
+22
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.008292
+23
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009170
+24
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.003678
+25
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.004144
+26
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009891
+27
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008991
+28
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.010747
+29
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.005042
+30
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.007837
+31
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.005523
+32
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.001264
+33
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008537
+34
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.006702
+35
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008098
+36
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008768
+37
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.011668
+38
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.006997
+39
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009488
+40
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.008298
+41
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.007922
+42
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009449
+43
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.009413
+44
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.003003
+45
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.004215
+46
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.003577
+47
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.007119
+48
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.007154
+49
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009244
+50
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010030
+51
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009178
+52
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 7
+SPN: 7
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,7,41
+
+NCLEANUP: 7
+T: 0.005284
+53
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009206
+54
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009905
+55
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009578
+56
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008292
+57
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.006473
+58
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.005821
+59
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009857
+60
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.007060
+61
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.010925
+62
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.009816
+63
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.003425
+64
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.004507
+65
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.005363
+66
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.012601
+67
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010004
+68
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.007491
+69
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 8
+SPN: 8
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,8,41
+
+NCLEANUP: 8
+T: 0.007928
+70
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009176
+71
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009576
+72
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 12
+SPN: 12
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,12,41
+
+NCLEANUP: 12
+T: 0.008914
+73
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.007883
+74
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009742
+75
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009130
+76
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010123
+77
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.005211
+78
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.010658
+79
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009631
+80
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008673
+81
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.003708
+82
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 12
+SPN: 12
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,12,41
+
+NCLEANUP: 12
+T: 0.004241
+83
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.004005
+84
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.008662
+85
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010928
+86
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009753
+87
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.008884
+88
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010367
+89
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 10
+SPN: 10
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,10,41
+
+NCLEANUP: 10
+T: 0.006971
+90
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009994
+91
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.008249
+92
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.007178
+93
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.010130
+94
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009458
+95
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009469
+96
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009786
+97
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009980
+98
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.009185
+99
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 9
+SPN: 9
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,9,41
+
+NCLEANUP: 9
+T: 0.009064
+100
+
+!: 85,523,0
+
+goal_verts: 41
+
+I: 0,85,41
+
+M1 Length: 11
+SPN: 11
+
+NCLEANUP: 85
+
+!: 85,523,1
+
+
+I: 1,11,41
+
+NCLEANUP: 11
+T: 0.007081

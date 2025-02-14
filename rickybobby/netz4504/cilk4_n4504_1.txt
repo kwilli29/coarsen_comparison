@@ -1,0 +1,3581 @@
+/opt/opencilk/bin/clang -fopencilk -O3 -lm cn_c.c -I/home/kwilli29/snap/snapd-desktop-integration/current/opt/local/include/igraph -L/home/kwilli29/snap/snapd-desktop-integration/current/opt/local/lib -ligraph -o cn_c
+1
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001214
+M1 Length: 313
+2B2: 0.000198
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.001996
+0x579be67b5cd8
+
+!: 320,398,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.007152
+RT: 0.003431
+
+!: 1961,2578,0
+2
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002390
+M1 Length: 310
+2B2: 0.000220
+SPN: 313
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002705
+0x61bb60867cd8
+
+!: 314,391,1
+
+
+I: 1, 314, 325
+
+NCLEANUP: 314
+
+T: 0.011278
+RT: 0.005334
+
+!: 1961,2578,0
+3
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001304
+M1 Length: 311
+2B2: 0.000232
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002982
+0x64f2935bacd8
+
+!: 322,403,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.009195
+RT: 0.004533
+
+!: 1961,2578,0
+4
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004009
+M1 Length: 313
+2B2: 0.000750
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007279
+0x5f8b1e69dcd8
+
+!: 322,399,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.026593
+RT: 0.012083
+
+!: 1961,2578,0
+5
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001352
+M1 Length: 307
+2B2: 0.000260
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002879
+0x55b05bbb2cd8
+
+!: 318,405,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.009355
+RT: 0.004507
+
+!: 1961,2578,0
+6
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002686
+M1 Length: 310
+2B2: 0.000195
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002363
+0x5bf16d68acd8
+
+!: 320,401,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.011962
+RT: 0.005267
+
+!: 1961,2578,0
+7
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001215
+M1 Length: 315
+2B2: 0.000886
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.009832
+0x59743545dcd8
+
+!: 318,382,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.022049
+RT: 0.011983
+
+!: 1961,2578,0
+8
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004554
+M1 Length: 319
+2B2: 0.000893
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.009456
+0x5d8feaddccd8
+
+!: 322,400,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.031438
+RT: 0.014938
+
+!: 1961,2578,0
+9
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003967
+M1 Length: 310
+2B2: 0.000205
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002828
+0x5e0715af3cd8
+
+!: 316,400,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.017358
+RT: 0.007024
+
+!: 1961,2578,0
+10
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004644
+M1 Length: 312
+2B2: 0.000778
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.004874
+0x630693a9acd8
+
+!: 315,397,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.025929
+RT: 0.010328
+
+!: 1961,2578,0
+11
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001288
+M1 Length: 317
+2B2: 0.000257
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.006488
+0x576982a93cd8
+
+!: 320,398,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.014916
+RT: 0.008055
+
+!: 1961,2578,0
+12
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004622
+M1 Length: 309
+2B2: 0.000797
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002437
+0x6014978ebcd8
+
+!: 316,408,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.020888
+RT: 0.007894
+
+!: 1961,2578,0
+13
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004378
+M1 Length: 313
+2B2: 0.000922
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002648
+0x640f38716cd8
+
+!: 322,401,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.022413
+RT: 0.007978
+
+!: 1961,2578,0
+14
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002177
+M1 Length: 312
+2B2: 0.000215
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002867
+0x5d78f73cacd8
+
+!: 320,400,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.010385
+RT: 0.005277
+
+!: 1961,2578,0
+15
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004692
+M1 Length: 312
+2B2: 0.000793
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.004802
+0x5ccf802cbcd8
+
+!: 320,392,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.025630
+RT: 0.010324
+
+!: 1961,2578,0
+16
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002480
+M1 Length: 318
+2B2: 0.000193
+SPN: 323
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002356
+0x626058357cd8
+
+!: 324,408,1
+
+
+I: 1, 324, 325
+
+NCLEANUP: 324
+
+T: 0.012239
+RT: 0.005049
+
+!: 1961,2578,0
+17
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003962
+M1 Length: 314
+2B2: 0.000673
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008923
+0x61deb6ef9cd8
+
+!: 321,398,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.028016
+RT: 0.013617
+
+!: 1961,2578,0
+18
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001236
+M1 Length: 318
+2B2: 0.000230
+SPN: 325
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002608
+0x5e698d35acd8
+
+!: 326,401,1
+
+
+I: 1, 326, 325
+
+1B1: 0.000233
+M1 Length: 168
+2B2: 0.000035
+SPN: 168
+
+NCLEANUP: 326
+building graph
+done building
+3B3: 0.000147
+0x5e698d35acd8
+
+!: 169,33,2
+
+
+I: 2, 169, 325
+
+NCLEANUP: 169
+
+T: 0.010349
+RT: 0.004515
+
+!: 1961,2578,0
+19
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001457
+M1 Length: 306
+2B2: 0.000214
+SPN: 312
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002113
+0x5c173225dcd8
+
+!: 313,386,1
+
+
+I: 1, 313, 325
+
+NCLEANUP: 313
+
+T: 0.009020
+RT: 0.003802
+
+!: 1961,2578,0
+20
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001433
+M1 Length: 307
+2B2: 0.000249
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002683
+0x5883237b6cd8
+
+!: 317,397,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.009013
+RT: 0.004387
+
+!: 1961,2578,0
+21
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001297
+M1 Length: 314
+2B2: 0.000224
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002474
+0x5760771d8cd8
+
+!: 321,397,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.008625
+RT: 0.004017
+
+!: 1961,2578,0
+22
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001451
+M1 Length: 313
+2B2: 0.000247
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003098
+0x565264b75cd8
+
+!: 319,408,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.009573
+RT: 0.004816
+
+!: 1961,2578,0
+23
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002885
+M1 Length: 303
+2B2: 0.000230
+SPN: 306
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002544
+0x63537432acd8
+
+!: 307,383,1
+
+
+I: 1, 307, 325
+
+NCLEANUP: 307
+
+T: 0.013422
+RT: 0.005679
+
+!: 1961,2578,0
+24
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003209
+M1 Length: 308
+2B2: 0.000607
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002114
+0x57a298248cd8
+
+!: 316,388,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.015076
+RT: 0.005972
+
+!: 1961,2578,0
+25
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001321
+M1 Length: 309
+2B2: 0.000240
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002634
+0x57a27cfc2cd8
+
+!: 318,394,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.009426
+RT: 0.004220
+
+!: 1961,2578,0
+26
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001962
+M1 Length: 311
+2B2: 0.000216
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002410
+0x61dc0df57cd8
+
+!: 319,393,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.010767
+RT: 0.004605
+
+!: 1961,2578,0
+27
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001509
+M1 Length: 316
+2B2: 0.000245
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002822
+0x5e0139feccd8
+
+!: 320,400,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.009670
+RT: 0.004597
+
+!: 1961,2578,0
+28
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003509
+M1 Length: 307
+2B2: 0.000240
+SPN: 310
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002445
+0x5ab895319cd8
+
+!: 311,396,1
+
+
+I: 1, 311, 325
+
+NCLEANUP: 311
+
+T: 0.015491
+RT: 0.006214
+
+!: 1961,2578,0
+29
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004044
+M1 Length: 311
+2B2: 0.000810
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003772
+0x62faeca4fcd8
+
+!: 320,401,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.022557
+RT: 0.008666
+
+!: 1961,2578,0
+30
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001872
+M1 Length: 315
+2B2: 0.000224
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002880
+0x5883ba867cd8
+
+!: 319,403,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.011066
+RT: 0.004995
+
+!: 1961,2578,0
+31
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001348
+M1 Length: 301
+2B2: 0.000261
+SPN: 306
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002955
+0x568204044cd8
+
+!: 307,381,1
+
+
+I: 1, 307, 325
+
+NCLEANUP: 307
+
+T: 0.010119
+RT: 0.004582
+
+!: 1961,2578,0
+32
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001256
+M1 Length: 313
+2B2: 0.000246
+SPN: 325
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002661
+0x57a9b71e7cd8
+
+!: 326,404,1
+
+
+I: 1, 326, 325
+
+1B1: 0.000278
+M1 Length: 166
+2B2: 0.000039
+SPN: 166
+
+NCLEANUP: 326
+building graph
+done building
+3B3: 0.000164
+0x57a9b71e7cd8
+
+!: 167,38,2
+
+
+I: 2, 167, 325
+
+NCLEANUP: 167
+
+T: 0.010219
+RT: 0.004670
+
+!: 1961,2578,0
+33
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004275
+M1 Length: 303
+2B2: 0.000931
+SPN: 310
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008715
+0x623fe1fb4cd8
+
+!: 311,382,1
+
+
+I: 1, 311, 325
+
+NCLEANUP: 311
+
+T: 0.029841
+RT: 0.013959
+
+!: 1961,2578,0
+34
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001424
+M1 Length: 318
+2B2: 0.000202
+SPN: 322
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002583
+0x64294889ecd8
+
+!: 323,399,1
+
+
+I: 1, 323, 325
+
+NCLEANUP: 323
+
+T: 0.008883
+RT: 0.004227
+
+!: 1961,2578,0
+35
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004264
+M1 Length: 318
+2B2: 0.000830
+SPN: 327
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002714
+0x5719bc2bfcd8
+
+!: 328,403,1
+
+
+I: 1, 328, 325
+
+1B1: 0.000338
+M1 Length: 166
+2B2: 0.000037
+SPN: 166
+
+NCLEANUP: 328
+building graph
+done building
+3B3: 0.000213
+0x5719bc2bfcd8
+
+!: 167,29,2
+
+
+I: 2, 167, 325
+
+NCLEANUP: 167
+
+T: 0.023592
+RT: 0.008440
+
+!: 1961,2578,0
+36
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004369
+M1 Length: 311
+2B2: 0.000919
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002990
+0x587094331cd8
+
+!: 318,394,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.021903
+RT: 0.008309
+
+!: 1961,2578,0
+37
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004463
+M1 Length: 309
+2B2: 0.000853
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.005335
+0x621f718b7cd8
+
+!: 315,401,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.025517
+RT: 0.010682
+
+!: 1961,2578,0
+38
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004537
+M1 Length: 316
+2B2: 0.000904
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.011118
+0x5948bd350cd8
+
+!: 322,402,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.034795
+RT: 0.016599
+
+!: 1961,2578,0
+39
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004207
+M1 Length: 310
+2B2: 0.000619
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003737
+0x6345c7735cd8
+
+!: 315,381,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.022100
+RT: 0.008596
+
+!: 1961,2578,0
+40
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001491
+M1 Length: 318
+2B2: 0.000221
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002908
+0x58b4b625dcd8
+
+!: 322,393,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.009854
+RT: 0.004640
+
+!: 1961,2578,0
+41
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001320
+M1 Length: 312
+2B2: 0.000201
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002160
+0x564f79c89cd8
+
+!: 320,405,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.007050
+RT: 0.003701
+
+!: 1961,2578,0
+42
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003012
+M1 Length: 304
+2B2: 0.000227
+SPN: 310
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002840
+0x5bd261cc4cd8
+
+!: 311,387,1
+
+
+I: 1, 311, 325
+
+NCLEANUP: 311
+
+T: 0.013714
+RT: 0.006100
+
+!: 1961,2578,0
+43
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004247
+M1 Length: 312
+2B2: 0.000762
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002429
+0x61062cef4cd8
+
+!: 317,397,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.020531
+RT: 0.007474
+
+!: 1961,2578,0
+44
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002352
+M1 Length: 309
+2B2: 0.000239
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002053
+0x561caf813cd8
+
+!: 318,386,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.011542
+RT: 0.004661
+
+!: 1961,2578,0
+45
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003576
+M1 Length: 312
+2B2: 0.000215
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002655
+0x5dfaea87bcd8
+
+!: 316,403,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.016171
+RT: 0.006466
+
+!: 1961,2578,0
+46
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002953
+M1 Length: 306
+2B2: 0.000210
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002035
+0x6365318e9cd8
+
+!: 316,390,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.012784
+RT: 0.005221
+
+!: 1961,2578,0
+47
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003713
+M1 Length: 318
+2B2: 0.000930
+SPN: 324
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.011049
+0x5764fa939cd8
+
+!: 325,409,1
+
+
+I: 1, 325, 325
+
+NCLEANUP: 325
+
+T: 0.030547
+RT: 0.015733
+
+!: 1961,2578,0
+48
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004526
+M1 Length: 310
+2B2: 0.000767
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002352
+0x61b9239a7cd8
+
+!: 319,394,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.020720
+RT: 0.007683
+
+!: 1961,2578,0
+49
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003950
+M1 Length: 320
+2B2: 0.000359
+SPN: 322
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002327
+0x6279b4bdbcd8
+
+!: 323,406,1
+
+
+I: 1, 323, 325
+
+NCLEANUP: 323
+
+T: 0.017314
+RT: 0.006665
+
+!: 1961,2578,0
+50
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003319
+M1 Length: 309
+2B2: 0.001001
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008237
+0x5bc1454bdcd8
+
+!: 317,391,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.029056
+RT: 0.012606
+
+!: 1961,2578,0
+51
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004541
+M1 Length: 308
+2B2: 0.000938
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.010448
+0x627b2a4f5cd8
+
+!: 317,382,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.034377
+RT: 0.015975
+
+!: 1961,2578,0
+52
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003982
+M1 Length: 311
+2B2: 0.000197
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002388
+0x5b7a0602dcd8
+
+!: 320,406,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.017429
+RT: 0.006591
+
+!: 1961,2578,0
+53
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002218
+M1 Length: 314
+2B2: 0.000247
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002736
+0x64a533902cd8
+
+!: 321,396,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.012208
+RT: 0.005220
+
+!: 1961,2578,0
+54
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001632
+M1 Length: 312
+2B2: 0.000241
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002076
+0x6380f1694cd8
+
+!: 318,393,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.008831
+RT: 0.003969
+
+!: 1961,2578,0
+55
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004508
+M1 Length: 314
+2B2: 0.000951
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008036
+0x56c79d0d9cd8
+
+!: 322,404,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.031779
+RT: 0.013564
+
+!: 1961,2578,0
+56
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004021
+M1 Length: 315
+2B2: 0.000678
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007885
+0x5f4244852cd8
+
+!: 319,392,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.026413
+RT: 0.012639
+
+!: 1961,2578,0
+57
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001499
+M1 Length: 312
+2B2: 0.000257
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003343
+0x5bf357496cd8
+
+!: 317,402,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.010774
+RT: 0.005116
+
+!: 1961,2578,0
+58
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003232
+M1 Length: 317
+2B2: 0.000215
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002532
+0x62e3d141bcd8
+
+!: 321,401,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.014697
+RT: 0.006001
+
+!: 1961,2578,0
+59
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004440
+M1 Length: 311
+2B2: 0.001426
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.001998
+0x5a32eb1a0cd8
+
+!: 319,390,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.023141
+RT: 0.007895
+
+!: 1961,2578,0
+60
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001078
+M1 Length: 316
+2B2: 0.000830
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008472
+0x5ec5a0bc5cd8
+
+!: 321,392,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.020288
+RT: 0.010431
+
+!: 1961,2578,0
+61
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004342
+M1 Length: 310
+2B2: 0.000918
+SPN: 311
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.009371
+0x62daa925ecd8
+
+!: 312,392,1
+
+
+I: 1, 312, 325
+
+NCLEANUP: 312
+
+T: 0.031357
+RT: 0.014680
+
+!: 1961,2578,0
+62
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003127
+M1 Length: 308
+2B2: 0.000225
+SPN: 308
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003371
+0x5e9cf96c4cd8
+
+!: 309,384,1
+
+
+I: 1, 309, 325
+
+NCLEANUP: 309
+
+T: 0.015298
+RT: 0.006743
+
+!: 1961,2578,0
+63
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003993
+M1 Length: 314
+2B2: 0.000200
+SPN: 322
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002520
+0x5824ec0afcd8
+
+!: 323,395,1
+
+
+I: 1, 323, 325
+
+NCLEANUP: 323
+
+T: 0.017106
+RT: 0.006735
+
+!: 1961,2578,0
+64
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001504
+M1 Length: 308
+2B2: 0.000976
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007745
+0x5d8e97b6dcd8
+
+!: 316,393,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.020294
+RT: 0.010260
+
+!: 1961,2578,0
+65
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001262
+M1 Length: 321
+2B2: 0.000205
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008544
+0x558e71634cd8
+
+!: 322,401,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.018903
+RT: 0.010041
+
+!: 1961,2578,0
+66
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001160
+M1 Length: 312
+2B2: 0.000232
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002383
+0x58d4e0cd5cd8
+
+!: 319,400,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.008567
+RT: 0.003791
+
+!: 1961,2578,0
+67
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002709
+M1 Length: 310
+2B2: 0.000197
+SPN: 313
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.001904
+0x5b6272064cd8
+
+!: 314,384,1
+
+
+I: 1, 314, 325
+
+NCLEANUP: 314
+
+T: 0.011983
+RT: 0.004830
+
+!: 1961,2578,0
+68
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003515
+M1 Length: 313
+2B2: 0.000720
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007661
+0x58538e1b2cd8
+
+!: 321,398,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.026886
+RT: 0.011941
+
+!: 1961,2578,0
+69
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002325
+M1 Length: 309
+2B2: 0.000821
+SPN: 321
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.008357
+0x583366f42cd8
+
+!: 322,404,1
+
+
+I: 1, 322, 325
+
+NCLEANUP: 322
+
+T: 0.024590
+RT: 0.011545
+
+!: 1961,2578,0
+70
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001381
+M1 Length: 314
+2B2: 0.000197
+SPN: 322
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002030
+0x57d4c3294cd8
+
+!: 323,401,1
+
+
+I: 1, 323, 325
+
+NCLEANUP: 323
+
+T: 0.007414
+RT: 0.003641
+
+!: 1961,2578,0
+71
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001070
+M1 Length: 314
+2B2: 0.000216
+SPN: 325
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003583
+0x634dbd4becd8
+
+!: 326,412,1
+
+
+I: 1, 326, 325
+
+1B1: 0.001225
+M1 Length: 168
+2B2: 0.000149
+SPN: 168
+
+NCLEANUP: 326
+building graph
+done building
+3B3: 0.000675
+0x634dbd4becd8
+
+!: 169,38,2
+
+
+I: 2, 169, 325
+
+NCLEANUP: 169
+
+T: 0.017042
+RT: 0.006960
+
+!: 1961,2578,0
+72
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002899
+M1 Length: 310
+2B2: 0.000201
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002161
+0x6364a18a1cd8
+
+!: 315,385,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.012992
+RT: 0.005278
+
+!: 1961,2578,0
+73
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003961
+M1 Length: 314
+2B2: 0.000195
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002955
+0x5a4b87918cd8
+
+!: 320,403,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.018030
+RT: 0.007131
+
+!: 1961,2578,0
+74
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001188
+M1 Length: 308
+2B2: 0.000215
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002883
+0x5c741b86ecd8
+
+!: 315,401,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.008510
+RT: 0.004306
+
+!: 1961,2578,0
+75
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001341
+M1 Length: 312
+2B2: 0.000261
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002314
+0x62ff94f67cd8
+
+!: 316,402,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.008014
+RT: 0.003933
+
+!: 1961,2578,0
+76
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001207
+M1 Length: 312
+2B2: 0.000228
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002539
+0x55a0ac425cd8
+
+!: 320,397,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.008329
+RT: 0.003991
+
+!: 1961,2578,0
+77
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004052
+M1 Length: 324
+2B2: 0.000750
+SPN: 327
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.006981
+0x5689f9615cd8
+
+!: 328,404,1
+
+
+I: 1, 328, 325
+
+1B1: 0.000903
+M1 Length: 171
+2B2: 0.000105
+SPN: 171
+
+NCLEANUP: 328
+building graph
+done building
+3B3: 0.000404
+0x5689f9615cd8
+
+!: 172,30,2
+
+
+I: 2, 172, 325
+
+NCLEANUP: 172
+
+T: 0.031506
+RT: 0.013244
+
+!: 1961,2578,0
+78
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001467
+M1 Length: 306
+2B2: 0.000239
+SPN: 311
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002885
+0x578959a76cd8
+
+!: 312,390,1
+
+
+I: 1, 312, 325
+
+NCLEANUP: 312
+
+T: 0.009998
+RT: 0.004608
+
+!: 1961,2578,0
+79
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001427
+M1 Length: 312
+2B2: 0.000258
+SPN: 316
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003118
+0x63a248a5ecd8
+
+!: 317,403,1
+
+
+I: 1, 317, 325
+
+NCLEANUP: 317
+
+T: 0.009569
+RT: 0.004823
+
+!: 1961,2578,0
+80
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001382
+M1 Length: 307
+2B2: 0.000222
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.003200
+0x6440e6d76cd8
+
+!: 315,388,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.010302
+RT: 0.004825
+
+!: 1961,2578,0
+81
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004060
+M1 Length: 312
+2B2: 0.000577
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.004805
+0x5a52ab024cd8
+
+!: 316,377,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.023014
+RT: 0.009477
+
+!: 1961,2578,0
+82
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004676
+M1 Length: 320
+2B2: 0.000200
+SPN: 323
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002298
+0x651a28a94cd8
+
+!: 324,395,1
+
+
+I: 1, 324, 325
+
+NCLEANUP: 324
+
+T: 0.020232
+RT: 0.007203
+
+!: 1961,2578,0
+83
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002715
+M1 Length: 315
+2B2: 0.000188
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.001812
+0x58270a3e5cd8
+
+!: 320,406,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.012008
+RT: 0.004735
+
+!: 1961,2578,0
+84
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003204
+M1 Length: 314
+2B2: 0.000202
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002495
+0x650ad54d4cd8
+
+!: 319,402,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.015073
+RT: 0.005920
+
+!: 1961,2578,0
+85
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.002801
+M1 Length: 307
+2B2: 0.000261
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002871
+0x5688273cfcd8
+
+!: 318,404,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.012735
+RT: 0.005953
+
+!: 1961,2578,0
+86
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001370
+M1 Length: 314
+2B2: 0.000229
+SPN: 319
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002915
+0x564cca36dcd8
+
+!: 320,404,1
+
+
+I: 1, 320, 325
+
+NCLEANUP: 320
+
+T: 0.009154
+RT: 0.004533
+
+!: 1961,2578,0
+87
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001288
+M1 Length: 310
+2B2: 0.000259
+SPN: 314
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002407
+0x5d81b0995cd8
+
+!: 315,386,1
+
+
+I: 1, 315, 325
+
+NCLEANUP: 315
+
+T: 0.008599
+RT: 0.003971
+
+!: 1961,2578,0
+88
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004074
+M1 Length: 314
+2B2: 0.000283
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002635
+0x615b8c4e3cd8
+
+!: 319,401,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.018502
+RT: 0.007022
+
+!: 1961,2578,0
+89
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004445
+M1 Length: 304
+2B2: 0.000797
+SPN: 309
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.009568
+0x5d3bbe8bccd8
+
+!: 310,386,1
+
+
+I: 1, 310, 325
+
+NCLEANUP: 310
+
+T: 0.031389
+RT: 0.014844
+
+!: 1961,2578,0
+90
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004448
+M1 Length: 312
+2B2: 0.000913
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002812
+0x5f82e90b5cd8
+
+!: 316,394,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.022755
+RT: 0.008208
+
+!: 1961,2578,0
+91
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004466
+M1 Length: 309
+2B2: 0.000815
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.004672
+0x635ecf5ebcd8
+
+!: 316,390,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.024327
+RT: 0.009988
+
+!: 1961,2578,0
+92
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.004183
+M1 Length: 307
+2B2: 0.000221
+SPN: 318
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002909
+0x5faef65d4cd8
+
+!: 319,397,1
+
+
+I: 1, 319, 325
+
+NCLEANUP: 319
+
+T: 0.018420
+RT: 0.007332
+
+!: 1961,2578,0
+93
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001894
+M1 Length: 320
+2B2: 0.000729
+SPN: 323
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.006958
+0x59285d615cd8
+
+!: 324,407,1
+
+
+I: 1, 324, 325
+
+NCLEANUP: 324
+
+T: 0.019390
+RT: 0.009626
+
+!: 1961,2578,0
+94
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001163
+M1 Length: 311
+2B2: 0.000643
+SPN: 315
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007839
+0x5ca2cced3cd8
+
+!: 316,385,1
+
+
+I: 1, 316, 325
+
+NCLEANUP: 316
+
+T: 0.018629
+RT: 0.009671
+
+!: 1961,2578,0
+95
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003115
+M1 Length: 313
+2B2: 0.000735
+SPN: 320
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.007562
+0x64effaed7cd8
+
+!: 321,396,1
+
+
+I: 1, 321, 325
+
+NCLEANUP: 321
+
+T: 0.026411
+RT: 0.011464
+
+!: 1961,2578,0
+96
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001311
+M1 Length: 308
+2B2: 0.000611
+SPN: 312
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002827
+0x5cfb6540dcd8
+
+!: 313,384,1
+
+
+I: 1, 313, 325
+
+NCLEANUP: 313
+
+T: 0.010102
+RT: 0.004777
+
+!: 1961,2578,0
+97
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001139
+M1 Length: 319
+2B2: 0.000274
+SPN: 322
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002907
+0x556de15abcd8
+
+!: 323,398,1
+
+
+I: 1, 323, 325
+
+NCLEANUP: 323
+
+T: 0.008614
+RT: 0.004341
+
+!: 1961,2578,0
+98
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001255
+M1 Length: 312
+2B2: 0.000228
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002340
+0x5ba03d5e4cd8
+
+!: 318,387,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.008641
+RT: 0.003836
+
+!: 1961,2578,0
+99
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.003646
+M1 Length: 314
+2B2: 0.000789
+SPN: 317
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.002210
+0x5b95cd4a8cd8
+
+!: 318,400,1
+
+
+I: 1, 318, 325
+
+NCLEANUP: 318
+
+T: 0.018294
+RT: 0.006701
+
+!: 1961,2578,0
+100
+Graph creation success
+1961
+2578
+attr exists: 1
+N: 1961 ecount: 2578
+
+!: 1961,2578,0
+
+goal_verts: 325
+
+I: 0, 1961, 325
+
+1B1: 0.001437
+M1 Length: 314
+2B2: 0.000996
+SPN: 324
+
+NCLEANUP: 1961
+building graph
+done building
+3B3: 0.009341
+0x630568725cd8
+
+!: 325,402,1
+
+
+I: 1, 325, 325
+
+NCLEANUP: 325
+
+T: 0.023758
+RT: 0.011822
+
+!: 1961,2578,0
