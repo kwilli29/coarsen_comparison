@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
+#include <assert.h>
 #include <sys/time.h>
+#include <math.h>
+#include <string.h>
 
 struct coltup{
     int coln;
@@ -57,7 +59,9 @@ struct CSR* csv_to_hash(char input_file[], int N, bool sym){
 
     // Read CSV and get # neighbors per N
     // int num_Neighbors[N];
-    int* num_Neighbors = (int*)calloc(N,sizeof(int));
+    struct timeval start_time, end_time;
+    gettimeofday(&start_time, NULL);int* num_Neighbors = (int*)calloc(N,sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC init CSVCSR #neigh: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     // memset(num_Neighbors, 0, N*sizeof(int));
 
     int arr = 0;
@@ -111,7 +115,7 @@ struct CSR* csv_to_hash(char input_file[], int N, bool sym){
         tns = tns - num_Neighbors[k];
         num_Neighbors[k] = tns;
         //if (k < 11 || k > (N-12)) {printf("%d: %d\t", k, num_Neighbors[k]);}
-    }printf("\ntotal #s: %d\n", total_numbers);
+    }//printf("\ntotal #s: %d\n", total_numbers);
 
     // struct 
 
@@ -122,7 +126,10 @@ struct CSR* csv_to_hash(char input_file[], int N, bool sym){
     // init Table
     // int col[total_numbers];
     // int* col = (int*)calloc(total_numbers,sizeof(int));
-    struct coltup* col = (struct coltup*)calloc(total_numbers,sizeof(struct coltup));
+
+    gettimeofday(&start_time, NULL);
+    struct coltup* col = (struct coltup*)calloc(total_numbers,sizeof(struct coltup));gettimeofday(&end_time, NULL);
+    printf("CALLOC init CSVCSRcol: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     // 0 = [1,2,3]
     for(int k=0; k < total_numbers; k++){
         col[k].coln =  -1; // (int*)calloc(num_Neighbors[k],sizeof(int));

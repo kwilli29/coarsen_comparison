@@ -46,9 +46,12 @@ int* kokkos_mis(struct CSR* G){ // 3. Build MIS of supernodes roughly based off 
     //     int rowStatus[(int)numVerts]; // helps track status of all vertices
     //   int colStatus[(int)numVerts]; // helps track status of local minima amongst neighbors
     //} 
-    int* rowStatus = (int*)calloc(numVerts,sizeof(int));
-    int* colStatus = (int*)calloc(numVerts,sizeof(int)); 
-    
+    struct timeval start_time,end_time;
+    gettimeofday(&start_time, NULL);int* rowStatus = (int*)calloc(numVerts,sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC RowStatus: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+    gettimeofday(&start_time, NULL);int* colStatus = (int*)calloc(numVerts,sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC ColStatus: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+
     for (int i = 0; i < numVerts; i++){
         rowStatus[i] = i; 
         colStatus[i] = OUT;
@@ -57,9 +60,10 @@ int* kokkos_mis(struct CSR* G){ // 3. Build MIS of supernodes roughly based off 
     //printf("rowStat: \n");//for (int j = 0; j < numVerts; j++){printf("%d ", rowStatus[j]);}printf("\n"); //printf("colStat: ");for (int i = 0; i < numVerts; i++){printf("%d ", colStatus[i]);} printf("\n");
 
     // Initialize worklist1 & worklist2
-
-    int* worklist1 = (int*)calloc(numVerts,sizeof(int)); // keeps track of UNDECIDED vertices
-    int* worklist2 = (int*)calloc(numVerts,sizeof(int)); // keeps track of OUT vertices
+    gettimeofday(&start_time, NULL);int* worklist1 = (int*)calloc(numVerts,sizeof(int));gettimeofday(&end_time, NULL); // keeps track of UNDECIDED vertices
+    printf("CALLOC Wrkl1: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+    gettimeofday(&start_time, NULL);int* worklist2 = (int*)calloc(numVerts,sizeof(int));gettimeofday(&end_time, NULL); // keeps track of OUT vertices
+    printf("CALLOC Wrkl2: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
 
     int k=0;
     for(  k = 0; k < numVerts; k++){ worklist1[k] = k;}
@@ -105,8 +109,10 @@ int* kokkos_mis(struct CSR* G){ // 3. Build MIS of supernodes roughly based off 
         }
         // allocate //
         int j=0; k=0;
-        int* w1 = (int*)calloc((int)num_undecided,sizeof(int)); // keeps track of UNDECIDED vertices
-        int* w2 = (int*)calloc((int)not_out,sizeof(int)); // keeps track of OUT vertices
+        gettimeofday(&start_time, NULL);int* w1 = (int*)calloc((int)num_undecided,sizeof(int)); gettimeofday(&end_time, NULL); // keeps track of UNDECIDED vertices
+        printf("CALLOC-Re W1: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+        gettimeofday(&start_time, NULL); int* w2 = (int*)calloc((int)not_out,sizeof(int)); gettimeofday(&end_time, NULL); // keeps track of OUT vertices
+        printf("CALLOC-Re W2: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
 
         for (int i = 0; i < wrk1sz; i++){
             if ( (rowStatus[worklist1[i]] != IN) && (rowStatus[worklist1[i]] != OUT) ){ w1[j] = worklist1[i]; j++; }
@@ -116,8 +122,10 @@ int* kokkos_mis(struct CSR* G){ // 3. Build MIS of supernodes roughly based off 
         }
         // copy memory to the newly shortened lists //
         // !!!! Compact worklists with parallel prefix sums
-        worklist1 = (int*)realloc(worklist1, num_undecided*sizeof(int));
-        worklist2 = (int*)realloc(worklist2, not_out*sizeof(int));
+        gettimeofday(&start_time, NULL);worklist1 = (int*)realloc(worklist1, num_undecided*sizeof(int));gettimeofday(&end_time, NULL);
+        printf("C-REALLOC-Re W1: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+        gettimeofday(&start_time, NULL);worklist2 = (int*)realloc(worklist2, not_out*sizeof(int));gettimeofday(&end_time, NULL);
+        printf("C-REALLOC-Re W2: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
         memcpy(worklist1, w1, num_undecided*sizeof(int));
         memcpy(worklist2, w2, not_out*sizeof(int));
         wrk1sz = num_undecided;
@@ -137,14 +145,18 @@ int* kokkos_mis(struct CSR* G){ // 3. Build MIS of supernodes roughly based off 
             num_in = num_in+1; }
     }
     // alocate // 
-    int* in_vertices = (int*)calloc((num_in+1),sizeof(int));  // over allocate, have a delimeter to find the length later
+    
+    gettimeofday(&start_time, NULL);
+    int* in_vertices = (int*)calloc((num_in+1),sizeof(int));gettimeofday(&end_time, NULL);  // over allocate, have a delimeter to find the length later
+    printf("CALLOC in-vertices: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     k=0;
     for (int i = 0; i < numVerts; i++){ 
         if (rowStatus[i] == IN) { in_vertices[k] = i; k++; }
     }
     in_vertices[num_in] = -1; // add a delimeter to later know length
 
-    int* M1 = (int*)calloc((num_in+1),sizeof(int)); 
+    gettimeofday(&start_time, NULL);int* M1 = (int*)calloc((num_in+1),sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC MIS: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     memcpy(M1, in_vertices, (num_in+1)*sizeof(int));
 
     free(in_vertices);
@@ -381,12 +393,17 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
     int col_spn=-1;
     float val = 0.0;
 
-    int* numNeighbors = (int*)calloc((int)spn+1,sizeof(int));
-    bool** bool_pntr_array = (bool**)calloc(spn+1, sizeof(bool *));
+    struct timeval start_time,end_time;
+    gettimeofday(&start_time, NULL);int* numNeighbors = (int*)calloc((int)spn+1,sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC BE #Neigh: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
+    gettimeofday(&start_time, NULL);bool** bool_pntr_array = (bool**)calloc(spn+1, sizeof(bool *));gettimeofday(&end_time, NULL);
+    printf("CALLOC Boolptr: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
 
     for(int p=1; p < spn+1; p++){
-        bool* w = calloc(p, sizeof(bool));
-        bool_pntr_array[p] = (bool*)w;
+        //bool* w = calloc(p, sizeof(bool));
+        bool w[p]; memset(w, 0, p*sizeof(bool));
+        //bool_pntr_array[p] = (bool*)w;
+        bool_pntr_array[p] = &w[0];
     }
     
     int ncnt = 0;
@@ -429,23 +446,26 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
 
         }
             
-    }printf("\n");
+    }//printf("\n");
 
     //cilk_sync;
 
     // index array
     int k = 0;
-    for(k=spn; k>=0; k--){
-        printf("%d: %d\t", k, numNeighbors[k]);}printf("\n");
+
     int tns = total_edges;
     
     for(k=spn; k>=0; k--){
         tns = tns - numNeighbors[k];
         numNeighbors[k] = tns;
-        printf("%d: %d\t", k, numNeighbors[k]);
-    }printf("\ntotal #s: %d\n\n", total_edges);
+        //printf("%d: %d\t", k, numNeighbors[k]);
+    }//printf("\ntotal #s: %d\n\n", total_edges);
 
+    
+    gettimeofday(&start_time, NULL);
     struct coltup* col = (struct coltup*)calloc(total_edges,sizeof(struct coltup));
+    gettimeofday(&end_time, NULL);
+    printf("CALLOC BE COL: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     // 0 = [1,2,3]
     for(int k=0; k < total_edges; k++){
         col[k].coln =  -1; // 
@@ -479,6 +499,12 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
         }
     }
     //cilk_sync;
+
+    //for(int p=1;p<spn+1; p++){
+    //    free((bool*)bool_pntr_array[p]);
+    //}
+    free(bool_pntr_array);
+
     /******************/ // ???? ????
     ncnt=0;
     for(int i=0; i < G->num_edges; i++){
@@ -532,19 +558,7 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
     cleanup(G); // Do not need larger graph anymore, free the memory
 
     int tott=0; 
-    printf("\nNeighbor Lists: \n");
-    for(int k=0; k < spn+1; k++){
-      if (k < (spn+1)) {
-        printf("%d: [ ",k);
-
-        if(k < (spn)){ tott=numNeighbors[k+1] - numNeighbors[k];} 
-        else{ tott = total_edges-numNeighbors[k];} 
-        
-        for(int l=numNeighbors[k]; l < (numNeighbors[k]+tott); l++){
-            printf(" (%d, %f) ", col[l].coln, col[l].w);
-        }
-        printf("]\n"); }
-    }// */
+// */
 
     static struct CSR subgraph;
     subgraph.N = spn+1;
@@ -558,10 +572,6 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
         if(nct < (subgraph.N-1)){ if(i == subgraph.index_ptr[nct+1]){ nct++; }
         }else{}
     }*/
-    for(int p=1;p<spn+1; p++){
-        free((bool*)bool_pntr_array[p]);
-    }
-    free(bool_pntr_array);
 
     return &subgraph;  
 }
@@ -569,15 +579,16 @@ struct CSR* build_edges(struct CSR* G, int* labels, int spn){ // 7. Build Edges
 /****************************************/
 
 struct CSR* kokkos_coarsen(struct CSR* G, int N){ // 2. Kokkos Coarsen
-    
+    struct timeval start_time,end_time;
     // list of vertices to assign to supernodes - unassigned vertices 
     int* vertex_set = NULL;
-    vertex_set = (int*)calloc(N,sizeof(int));
+    gettimeofday(&start_time, NULL);vertex_set = (int*)calloc(N,sizeof(int));gettimeofday(&end_time, NULL);
+    printf("CALLOC unassgin.v: %lf\n", (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000));
     for (int i = 0; i < N; i++){ vertex_set[i] = i; }
 
     // 3. Find the 2-Maximal Independent Set
     int* M1= NULL;
-    struct timeval start_time,end_time;
+    
     gettimeofday(&start_time, NULL);
     M1 = kokkos_mis(G);
     gettimeofday(&end_time, NULL);
@@ -597,7 +608,9 @@ struct CSR* kokkos_coarsen(struct CSR* G, int N){ // 2. Kokkos Coarsen
     // Create array where indices = vertices & values = supernode vertices is grouped under
     gettimeofday(&start_time, NULL);
     //int labels[N];
-    int* labels = (int*)calloc(N,sizeof(int));
+    struct timeval st,et;
+    gettimeofday(&st, NULL);int* labels = (int*)calloc(N,sizeof(int));gettimeofday(&et, NULL);
+    printf("CALLOC labelArr: %lf\n", (et.tv_sec+ (double)et.tv_usec/1000000) - (st.tv_sec+(double)st.tv_usec/1000000));
     memset(labels, -1, N*sizeof(int));
 
     // 4. First Pass
@@ -625,7 +638,8 @@ struct CSR* kokkos_coarsen(struct CSR* G, int N){ // 2. Kokkos Coarsen
         } 
     }
 
-    vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int)); // resize set of unlabeled vertices
+    gettimeofday(&st, NULL);vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int)); gettimeofday(&et, NULL); // resize set of unlabeled vertices
+    printf("C-REALLOC unasgn.v1: %lf\n", (et.tv_sec+ (double)et.tv_usec/1000000) - (st.tv_sec+(double)st.tv_usec/1000000));
     memcpy(vertex_set, nvs, sizeof(nvs));
 
     // 5. Second Pass
@@ -653,7 +667,8 @@ struct CSR* kokkos_coarsen(struct CSR* G, int N){ // 2. Kokkos Coarsen
         } 
     }
 
-    vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int));
+    gettimeofday(&st, NULL);vertex_set = (int*)realloc(vertex_set, new_len*sizeof(int));gettimeofday(&et, NULL);
+    printf("C-REALLOC unasgn.v2: %lf\n", (et.tv_sec+ (double)et.tv_usec/1000000) - (st.tv_sec+(double)st.tv_usec/1000000));
     memcpy(vertex_set, nvs2, sizeof(nvs2));
 
     int supernode = M1_length; // number of elements in M1
@@ -682,6 +697,8 @@ struct CSR* kokkos_coarsen(struct CSR* G, int N){ // 2. Kokkos Coarsen
     gettimeofday(&start_time, NULL);
     //start = clock();
     struct CSR* subgraph = build_edges(G, labels, supernode);
+    //if(N <= 000000){ subgraph = build_edges(G, labels, supernode); }
+    //if(N > 1000000){  subgraph = build_edges2(G, labels, supernode);}
     gettimeofday(&end_time, NULL);
     double B3 = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
     //end = clock();
@@ -772,24 +789,17 @@ int main(int argc, char *argv[]){
 
     // To Write: display graph function
 
-    int goal_verts = (int)N-1; // (int)(N/6) - 1; // set minimum goal vertices
+    int goal_verts = (int)(N/6) - 1;//  (int)N-1; //set minimum goal vertices
     printf("goal_verts: %d\n", goal_verts);
 
     struct timeval start_time,end_time;
     gettimeofday(&start_time, NULL);
-    clock_t start = clock();
-
     int exit1 = recursion_fcn(graph_ptr, goal_verts); // 1. Begin recursive coarsening
-    
-    clock_t end = clock();
     gettimeofday(&end_time, NULL);
 
     double realTime = (end_time.tv_sec+ (double)end_time.tv_usec/1000000) - (start_time.tv_sec+(double)start_time.tv_usec/1000000);
-
-    double myTime = (((double)end - start)/CLOCKS_PER_SEC);
     //printf("# of Iterations: %d\n", ITERATIONS);
     //printf("Exit %d \n", exit1);
-    printf("\nT: %f\n", myTime);
     printf("RT: %lf", realTime);
     //printf("Coarsened in %f seconds.\n", myTime); //
 
